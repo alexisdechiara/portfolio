@@ -1,15 +1,23 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^1.2.2"
-  }
+	"name": "portfolio",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/image": "^0.7.0",
+		"@astrojs/tailwind": "^1.0.0",
+		"astro": "^1.2.2",
+		"astro-icon": "^0.7.3"
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1",
+		"prettier-plugin-tailwindcss": "^0.1.13",
+		"tailwind-scrollbar": "^2.0.1"
+	}
 }

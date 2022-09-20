@@ -1,0 +1,58 @@
+---
+import Project from "../components/Project.astro";
+
+const projects = [
+	{
+	url: 'src/assets/images/projects/roll20Alternative.png',
+	alt: 'Portfolio',
+	title: 'Portfolio',
+	description: "Deuxième version de mon protfolio cette fois réalisé avec Astro et Tailwind.",
+	git: 'https://github.com/alexisdechiara/portfolio',
+	website: '#',
+	},
+	{
+	url: 'src/assets/images/projects/roll20Alternative.png',
+	alt: 'Roll20Alternative',
+	title: 'Roll20Alternative',
+	description: "Projet réalisé en équipe de 6 durant la 2ème année de DUT Informatique.",
+	git: 'https://github.com/alexisdechiara/Roll20Alternative',
+	website : '#'
+	},
+	{
+	url: 'src/assets/images/projects/concertProject.png',
+	alt: 'ConcertProject',
+	title: 'ConcertProject',
+	description: "Projet réalisé seul en licence pro APIDAE et m'ayant nécéssité 35h de travail",
+	git: 'https://github.com/alexisdechiara/ConcertProject',
+	website : '#'
+	},
+	{
+	url: 'src/assets/images/projects/cookandchief.jpg',
+	alt: 'Cook&Chief',
+	title: 'Cook&Chief',
+	description: "Projet réalisé en cours de licence pro APIDAE avec l'aide d'un designer pour les images",
+	git: 'https://github.com/alexisdechiara/cookandchief',
+	website : 'https://cookandchief.netlify.app'
+	},
+	{
+	url: 'src/assets/images/projects/cookandchief.jpg',
+	alt: 'Utility Tools',
+	title: 'Utility Tools',
+	description: "Site permettant de rassembler un ensemble de fonctionnalités pratiques",
+	git: 'https://github.com/alexisdechiara/utility-tools',
+	website : 'https://alexisdechiara.github.io/utility-tools/'
+	}
+]
+---
+
+<section class="border-top-2 border-gray-300 pt-24 mt-24 mb-32" id="projects">
+	<div class="mb-16 text-center">
+		<h3 class="font-bold text-4xl pb-2">Mes projets</h3>
+		<span class="font-medium text-xl">Voici les projets personnels que j’ai réalisés</span>
+	</div>
+	<div class="w-full grid grid-cols-3 gap-8 px-32">
+		{projects.map((content) => (
+			<Project content={content}/>
+		))}
+	</div>
+</section>

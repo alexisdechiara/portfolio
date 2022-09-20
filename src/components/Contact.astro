@@ -1,0 +1,53 @@
+---
+const license = "MIT";
+const version = "0.1.0";
+import { Icon } from "astro-icon";
+---
+
+<section>
+	<Icon class="fill-slate-900" name="wave" />
+	<div class="bg-slate-900 min-h-screen relative">
+		<div class="flex flex-col justify-center items-center pt-24" id="contact">
+			<h3 class="font-bold text-4xl pb-8 text-white text-center">Contact</h3>
+			<form class="w-fit space-y-4" action="">
+				<div class="flex justify-center space-x-6">
+					<div class="flex flex-1 flex-col">
+						<label class="text-white font-medium pb-1" for="name">Nom</label>
+						<input id="name" class="rounded-xl bg-white text-black px-2" type="text" />
+					</div>
+					<div class="flex flex-1 flex-col">
+						<label class="text-white font-medium pb-1" for="mail">Courriel</label>
+						<input id="mail" class="rounded-xl bg-white text-black px-2" type="email" />
+					</div>
+				</div>
+				<div class="flex flex-col">
+					<label class="text-white font-medium pb-1" for="message">Message</label>
+					<textarea id="message" class="rounded-xl leading-5 bg-white text-black h-32 px-2 py-1"></textarea>
+				</div>
+				<button
+					type="submit"
+					class="float-right rinline rounded-full border-2 ease-in-out transition duration-150 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-slate-900 uppercase px-4 py-2">
+					Envoyer
+				</button>
+			</form>
+		</div>
+		<div class="flex space-x-24 justify-center items-center text-white pt-24 pb-32">
+			<a href="https://github.com/alexisdechiara" class="flex flex-col justify-center items-center space-y-2 hover:scale-110 ease-in-out transition duration-150">
+				<Icon class="h-12 w-12" pack="simple-icons" name="github" />
+				<span class="text-lg"> GitHub</span>
+			</a>
+			<a href="https://gitlab.com/AlexisDeChiara" class="flex flex-col justify-center items-center space-y-2 hover:scale-110 ease-in-out transition duration-150">
+				<Icon class="h-12 w-12" pack="ph" name="gitlab-logo-fill" />
+				<span class="text-lg"> GitLab</span>
+			</a><a href="https://linkedin.com/in/alexisdechiara" class="flex flex-col justify-center items-center space-y-2 hover:scale-110 ease-in-out transition duration-150">
+				<Icon class="h-12 w-12" pack="cib" name="linkedin" />
+				<span class="text-lg"> LinkedIn</span>
+			</a>
+		</div>
+		<div class="flex justify-between items-center absolute inset-x-8 bottom-4 text-white h-100">
+			<span>Site sous licence {license}</span>
+			<span>Réalisé par Alexis De Chiara et inspiré de <a class="underline hover:text-indigo-500" href="https://mattfarley.ca/"> mattfarley.ca</a></span>
+			<span>Version {version}</span>
+		</div>
+	</div>
+</section>

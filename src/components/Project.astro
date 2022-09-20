@@ -1,0 +1,31 @@
+---
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+
+export interface Props {
+	content : { 
+		url: string;
+		alt: string;
+		title: string;
+		description: string;
+		git: string;
+		website: string;
+	}
+}
+
+let { content } = Astro.props;
+---
+
+<div class="flex flex-col border rounded-2xl justify-start items-start shadow-sm">
+	<a href={content.website}>
+		<Image alt={content.alt} src={content.url} width="1920" aspectRatio={16 / 9} class="rounded-t-2xl" />
+	</a>
+	<div class="flex flex-col px-4 py-4 w-full">
+		<h4 class="text-lg font-bold">{content.title}</h4>
+		<span class="text-sm font-medium text-justify pb-2">{content.description}</span>
+		<div class="flex justify-end space-x-4 mr-4">
+			<a href={content.git} target="_blank"><Icon class="h-6 w-6" pack="simple-icons" name="github" /></a>
+			<a href={content.website} target="_blank" class="hidden"><Icon class="h-6 w-6" pack="ph" name="arrow-square-out-light" /></a>
+		</div>
+	</div>
+</div>

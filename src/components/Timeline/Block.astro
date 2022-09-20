@@ -1,0 +1,21 @@
+---
+export interface Props {
+	title: string;
+	location: string;
+	description: string;
+	site: string;
+	map: string;
+}
+
+const { title, location, description, site, map } = Astro.props;
+---
+
+<div class="flex flex-col p-11 border-[3px] hover:bg-indigo-600 hover:text-white border-indigo-600 w-[500px] h-[300px] transition duration-75 ease-in-out">
+	<h4 class="text-2xl font-bold">{title}</h4>
+	<span class="text-lg font-light"> {location}</span>
+	<p class="font-medium text-justify py-2 grow">{description}</p>
+	<div class="flex justify-end space-x-2">
+		<a href={site} target="_blank" class="bg-indigo-500 hover:bg-pink-500 text-white p-2 transition duration-75 ease-in-out"> Site web</a>
+		<a href={map} target="_blank" class="bg-indigo-500 hover:bg-pink-500 text-white p-2 transition duration-75 ease-in-out"> Carte</a>
+	</div>
+</div>

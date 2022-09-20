@@ -1,0 +1,18 @@
+---
+import { Image } from "@astrojs/image/components";
+---
+
+<section class="w-screen h-screen flex justify-center items-center" id="presentation">
+	<Image src="src/assets/images/profil.png" alt="Profile picture" width="aspectRatio" height="aspectRatio" aspectRatio={1} class="w-[256px] 2xl:w-[384px] mr-12" />
+	<div class="flex flex-col">
+		<h1 class="block text-5xl 2xl:text-6xl font-bold pb-2">Alexis De Chiara</h1>
+		<h2 class="block text-3xl 2xl:text-5xl font-medium max-w-fit">
+			Développeur <span class="text-indigo-500"> front-end</span> & <span class="text-indigo-500"> UX/UI</span> Designer
+		</h2>
+		<a
+			href="#"
+			class="w-fit inline rounded-full border-2 ease-in-out transition duration-150 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white uppercase mt-4 px-4 py-2">
+			me contacter
+		</a>
+	</div>
+</section>

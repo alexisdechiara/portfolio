@@ -1,0 +1,63 @@
+---
+import Block from "../components/Timeline/Block.astro";
+import EmptyLine from "../components/Timeline/EmptyLine.astro";
+---
+
+<section class="flex justify-center items-center pt-24 mt-24 flex-col" id="career">
+	<div class="mb-24">
+		<h3 class="text-center font-bold text-4xl pb-2">Mon parcourt</h3>
+		<span class="font-medium text-xl">Voici les études que j’ai fait durant mes années scolaires</span>
+	</div>
+	<div class="flex flex-col relative w-full px-24 space-y-16">
+		<span class="bg-indigo-600 w-2 h-full mb-16 absolute left-1/2 -translate-x-1"></span>
+		<EmptyLine />
+
+		<div class="flex items-center h-[300px]">
+			<div class="w-1/2">
+				<Block
+					title="Baccalauréat Scientifique"
+					location="Lycée Calmette"
+					description="Option ISN avec de la programmation en java et python, mais aussi apprentissage du html5 et css3 à part."
+					site="https://www.lyc-albert-calmette.ac-nice.fr/"
+					map="https://goo.gl/maps/3WiJWewYvVLdTL866"
+				/>
+			</div>
+			<span class="border-indigo-600 bg-indigo-600 border-[16px] rounded-full -translate-x-4 mr-8"></span>
+			<span class="text-4xl font-bold text-indigo-600"> 2019</span>
+		</div>
+
+		<EmptyLine />
+
+		<div class="flex items-center justify-end h-[300px]">
+			<span class="text-4xl font-bold text-indigo-600"> 2021</span>
+			<span class="border-indigo-600 bg-indigo-600 border-[16px] rounded-full translate-x-12 mr-8"></span>
+			<div class="w-1/2 justify-end flex">
+				<Block
+					title="DUT Informatique"
+					location="IUT Nice Côte D’azur"
+					description="Formation initiale menant sur l'apprentissage de l'ensemble des types de langage de programmation existants."
+					site="https://iut.univ-cotedazur.fr/"
+					map="https://goo.gl/maps/EwWEVBcQAvNXJzjYA"
+				/>
+			</div>
+		</div>
+
+		<div class="flex items-center h-[300px]">
+			<div class="w-1/2">
+				<Block
+					title="Licence pro APIDAE"
+					location="IUT Montpellier-Sète"
+					description="Cours en alternance dans le but de poursuivre les études en informatique, parcours : Assistant de Projet Informatique, Développement d’Application E-business."
+					site="https://iut-montpellier-sete.edu.umontpellier.fr/"
+					map="https://goo.gl/maps/Up5a7iSAJXj4He9NA"
+				/>
+			</div>
+			<span class="border-indigo-600 bg-indigo-600 border-[16px] rounded-full -translate-x-4 mr-8"></span>
+			<span class="text-4xl font-bold text-indigo-600"> 2022</span>
+		</div>
+	</div>
+	<div class="relative h-32 w-4">
+		<span class="border-r-8 border-dashed border-indigo-600 absolute h-full -mt-1 left-1/2 -translate-x-1"></span>
+		<div class="bg-gradient-to-t from-white absolute h-full w-full"></div>
+	</div>
+</section>
