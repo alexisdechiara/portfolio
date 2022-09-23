@@ -1,0 +1,97 @@
+{
+	"navigation": {
+		"presentation": "presentation",
+		"skills": "skills",
+		"career": "career",
+		"projects": "projects",
+		"contact": "contact"
+	},
+	"settings": {
+		"language": "language",
+		"color": "color",
+		"theme": "theme"
+	},
+	"presentation": {
+		"description": "<0> Front-end </0> developer & <1> UX/UI </1> designer",
+		"contact": "contact me"
+	},
+	"skills": {
+		"welcome": "Welcome to my portfolio site",
+		"description": "If you're here to see my skills and learn more about what I've done, you've come to the right place: I'm a front-end web developer who also likes to make UI/UX models. Very self-taught, I have always been passionate about computers and new technologies.",
+		"firstColumn": {
+			"title": "Front-end developer",
+			"subtitle": "I can program a whole website, but I have a preference for the front-end",
+			"language": "Languages",
+			"framework": "Frameworks"
+		},
+		"secondColumn": {
+			"title": "UI/UX Designer",
+			"subtitle": "I've always liked things to be beautiful, so it's only logical that I'm also interested in UI/UX design.",
+			"tools": "Design tools"
+		}
+	},
+	"career": {
+		"title": "My career",
+		"subtitle": "Here are the studies I did during my school years.",
+		"2019": {
+			"title": "French HS diploma, Science major",
+			"location": "Calmette High School of Nice",
+			"description": "Computer Science and Science of Digital option with programming in Java but also learning HTML 5 and CSS 3."
+		},
+		"2021": {
+			"title": "University Diploma of Technology in Computer Science",
+			"location": "IUT Nice Côte D’azur",
+			"description": "Initial training leading to the learning of all types of existing programming languages."
+		},
+		"2022": {
+			"title": "Professional license APIDAE",
+			"location": "IUT Montpellier-Sète",
+			"description": "Work-study course with the company Orange Business Services in order to pursue studies in computer science in the field of the web, course: Computer Project Assistant, E-business Application Development."
+		}
+	},
+	"block": {
+		"website": "website",
+		"map": "map"
+	},
+	"projects": {
+		"title": "My projects",
+		"subtitle": "Here are the personal projects I've done.",
+		"portfolio": {
+			"alt": "Portfolio",
+			"title": "Portfolio",
+			"description": "Second version of my portfolio this time made with Astro and Tailwind."
+		},
+		"roll20Alternative": {
+			"alt": "Roll20Alternative",
+			"title": "Roll20Alternative",
+			"description": "Project realized in team of 6 during the 2nd year of University Diploma of Technology in Computer Science."
+		},
+		"concertProject": {
+			"alt": "ConcertProject",
+			"title": "ConcertProject",
+			"description": "Project realized alone in professional license APIDAE and having required me 35h of work."
+		},
+		"cookandchief": {
+			"alt": "Cook&Chief",
+			"title": "Cook&Chief",
+			"description": "Project realized in the course of professional license APIDAE with the help of a designer for the images."
+		},
+		"utility-tools": {
+			"alt": "Utility Tools",
+			"title": "Utility Tools",
+			"description": "Site allowing to gather a set of practical functionalities."
+		}
+	},
+	"contact": {
+		"title": "contact",
+		"name": "name",
+		"email": "email",
+		"message": "message",
+		"send": "send"
+	},
+	"footer": {
+		"license": "Site under MIT license",
+		"realisation": "Realized by Alexis De Chiara and inspired by <0>mattfarley.ca</0>",
+		"version": "version"
+	}
+}

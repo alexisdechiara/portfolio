@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
@@ -11,12 +11,16 @@
 	},
 	"dependencies": {
 		"@astrojs/image": "^0.7.0",
+		"@astrojs/svelte": "^1.0.0",
 		"@astrojs/tailwind": "^1.0.0",
 		"astro": "^1.2.2",
-		"astro-icon": "^0.7.3"
+		"astro-i18next": "^1.0.0-beta.10",
+		"astro-icon": "^0.7.3",
+		"i18next-fs-backend": "^1.1.5"
 	},
 	"devDependencies": {
 		"prettier": "^2.7.1",
+		"prettier-plugin-astro": "^0.5.4",
 		"prettier-plugin-tailwindcss": "^0.1.13",
 		"tailwind-scrollbar": "^2.0.1"
 	}

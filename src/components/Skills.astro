@@ -1,14 +1,13 @@
 ---
-import Tile from './Tile.astro';
+import Column from './Column.astro';
+import { Icon } from 'astro-icon';
+import { t } from "i18next";
 ---
 
-<section class='flex items-center justify-center min-h-screen pt-24 pb-96 px-48 bg-indigo-600' id="skills">
+<section class='flex items-center justify-center min-h-screen pt-24 pb-96 px-48 bg-primary-dark' id="skills">
 	<div class='flex flex-col text-white'>
-		<h3 class='text-4xl mb-2 font-bold text-center'>Bienvenu sur mon site portfolio.</h3>
-		<span class='text-xl font-medium text-center'>
-			Si tu es ici c’est pour voir mes compétences et en savoir plus sur ce que j’ai fait alors sache que tu es au bon endroit : Je suis un developpeur web front-end qui aime
-			aussi réaliser des maquettes en UI/UX. Très autodidacte je suis depuis toujours passioné par l’informatique et les nouvelles technologies.
-		</span>
+		<h3 class='text-4xl mb-2 font-bold text-center'>{t("skills.welcome")}</h3>
+		<span class='text-xl font-medium text-center'>{t("skills.description")}</span>
 	</div>
 </section>
 
@@ -16,45 +15,20 @@ import Tile from './Tile.astro';
 	<div class='flex bg-white shadow-md border h-fill w-3/5 rounded-xl -mt-72'>
 		<div class='flex-1 flex-col border-r justify-center items-center py-8 px-12'>
 			<div class='flex flex-col justify-center items-center mb-8'>
-				<svg class='mb-8' width='96' height='96' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-					<rect width='128' height='128' rx='64' fill='#818CF8'></rect>
-					<path d='M42.25 44L18.25 64L42.25 84' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'></path>
-					<path d='M86.5 44L110.5 64L86.5 84' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'></path>
-					<path d='M73.5 39L55.5 89' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'></path>
-				</svg>
-				<h4 class='text-2xl font-bold pb-2'>Développeur Front-end</h4>
-				<span class='text-md text-center'>Je peut programmer un site web en entier mais j’ai tout de même une préférence pour le front-end</span>
+				<Icon class='mb-8 p-4 w-24 text-primary-dark bg-gray-100 rounded-full' pack="ph" name="code" />
+				<h4 class='text-2xl font-bold pb-2'>{t("skills.firstColumn.title")}</h4>
+				<span class='text-md text-center'>{t("skills.firstColumn.subtitle")}</span>
 			</div>
-			<Tile title='Langage' content={['HTML, CSS, JavaScript, TypeScript, PHP, Java, C, C#, Access, MySQL, PostgreSQL, Oracle Database, Firebase']} />
-			<Tile title='Framework' content={['Angular', 'react', 'Vue', 'Astro', 'Synfony', 'Laravel', 'Spring', 'Bootstrap', 'Tailwind']} />
+			<Column title={t("skills.firstColumn.language")} content={['HTML, CSS, JavaScript, TypeScript, PHP, Java, C, C#, Access, MySQL, PostgreSQL, Oracle Database, Firebase']} />
+			<Column title={t("skills.firstColumn.framework")} content={['Angular', 'react', 'Vue', 'Astro', 'Synfony', 'Laravel', 'Spring', 'Bootstrap', 'Tailwind']} />
 		</div>
 		<div class='flex-1 flex-col justify-center items-center py-8 px-12'>
 			<div class='flex flex-col justify-center items-center mb-8'>
-				<svg class='mb-8' width='96' height='96' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'>
-					<rect width='128' height='128' rx='64' fill='#818CF8'></rect>
-					<path
-						d='M103.723 73.9809C104.432 70.8809 104.776 67.7092 104.748 64.53C104.578 42.0096 85.8706 23.789 63.3196 24.0018C53.6856 24.1031 44.395 27.5827 37.078 33.8301C29.761 40.0776 24.8848 48.6938 23.305 58.167C21.7253 67.6403 23.5428 77.3655 28.4387 85.6364C33.3347 93.9073 40.9963 100.195 50.0794 103.398C51.6245 103.953 53.2811 104.128 54.9085 103.908C56.536 103.688 58.0862 103.081 59.4277 102.136C60.7692 101.192 61.8623 99.9389 62.6142 98.4836C63.366 97.0283 63.7545 95.4136 63.7467 93.7766V92.1163C63.741 90.773 64.0023 89.4419 64.5154 88.1997C65.0286 86.9576 65.7834 85.829 66.7364 84.8791C67.6893 83.9293 68.8216 83.1769 70.0678 82.6654C71.314 82.154 72.6494 81.8935 73.9971 81.8992H93.7292C96.0481 81.9006 98.2989 81.1184 100.114 79.6802C101.929 78.242 103.202 76.2329 103.723 73.9809V73.9809Z'
-						stroke='black'
-						stroke-width='5'
-						stroke-linecap='round'
-						stroke-linejoin='round'></path>
-					<path
-						d='M63.75 49C67.616 49 70.75 46.0899 70.75 42.5C70.75 38.9101 67.616 36 63.75 36C59.884 36 56.75 38.9101 56.75 42.5C56.75 46.0899 59.884 49 63.75 49Z'
-						fill='black'></path>
-					<path
-						d='M44.75 61C48.616 61 51.75 57.866 51.75 54C51.75 50.134 48.616 47 44.75 47C40.884 47 37.75 50.134 37.75 54C37.75 57.866 40.884 61 44.75 61Z'
-						fill='black'></path>
-					<path
-						d='M44.75 83C48.616 83 51.75 79.866 51.75 76C51.75 72.134 48.616 69 44.75 69C40.884 69 37.75 72.134 37.75 76C37.75 79.866 40.884 83 44.75 83Z'
-						fill='black'></path>
-					<path
-						d='M82.75 61C86.616 61 89.75 57.866 89.75 54C89.75 50.134 86.616 47 82.75 47C78.884 47 75.75 50.134 75.75 54C75.75 57.866 78.884 61 82.75 61Z'
-						fill='black'></path>
-				</svg>
-				<h4 class='text-2xl font-bold pb-2'>UI/UX Designer</h4>
-				<span class='text-md text-center'>J’ai toujours aimé que les choses soient belles, c’est donc tout logiquement que je m’interesse aussi à l’UI/UX design</span>
+				<Icon class='mb-8 p-4 w-24 text-primary-dark bg-gray-100 rounded-full' pack="ph" name="palette" />
+				<h4 class='text-2xl font-bold pb-2'>{t("skills.secondColumn.title")}</h4>
+				<span class='text-md text-center'>{t("skills.secondColumn.subtitle")}</span>
 			</div>
-			<Tile title='Outils de conception' content={['Figma', 'Photoshop', 'Premiere Pro', 'DaVinci Resolve']} />
+			<Column title={t("skills.secondColumn.tools")} content={['Figma', 'Photoshop', 'Premiere Pro', 'DaVinci Resolve']} />
 		</div>
 	</div>
 </section>
