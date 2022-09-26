@@ -5,137 +5,15 @@ import { t } from "i18next";
 let palette = ['sky','indigo','purple','orange','red','pink','green'];
 ---
 
-<script>
-import colors from 'tailwindcss/colors'
-const modals = document.querySelectorAll("#modalOverlay, #modalContainer");
-const modalTriggers = document.querySelectorAll("#modalOverlay, #gearTrigger");
-const colorSwitchers = <NodeListOf<HTMLInputElement>>document.getElementsByName("colorSwitcher");
-const languageButtons = <NodeListOf<HTMLInputElement>>document.querySelectorAll("#frenchButton, #englishButton");
-const gearTrigger = document.getElementById("gearTrigger");
-
-const sections = <NodeListOf<HTMLElement>>document.querySelectorAll("#presentation, #skills, #career, #projects, #contact");
-const links = document.querySelectorAll("#presentation-link, #skills-link, #career-link, #projects-link, #contact-link");
-
-window.onscroll = () => {
-	sections.forEach(section => {
-		if (section.getBoundingClientRect().top <= 96 ) {
-			links.forEach(link => {
-					if(link.id == section.id + "-link"){
-						link.classList.add("text-black");
-						link.classList.add("font-bold");
-					} else {
-						link.classList.remove("text-black");
-						link.classList.remove("font-bold");
-					}
-				})
-		} else {
-			links.forEach(link => {
-					if(link.id == section.id + "-link"){
-						link.classList.remove("text-black");
-						link.classList.remove("font-bold");
-					}
-				})
-		}
-	});
-};
-
-let stockColor = 'random';
-if (stockColor === 'random') {
-	stockColor = getRandomColor();
-}
-changeColor(stockColor);
-checkCurrentColor(stockColor);
-
-function getRandomColor (): string {
-	let randomColor = ['sky','indigo','purple','red','pink','orange','green'];
-	let randomIndex = Math.floor(Math.random() * randomColor.length); 
-	return randomColor[randomIndex];
-}
-
-function checkCurrentColor(color:string){
-	colorSwitchers.forEach(btn => btn.checked = btn.value == color);
-}
-
-colorSwitchers.forEach(btn => btn.addEventListener("click", function() {
-	changeColor(btn.value);
-}));
-
-languageButtons.forEach(btn => btn.addEventListener("click", switchLanguage));
-languageButtons.forEach(btn => {
-	if(btn.value === window.location.pathname) {
-		btn.checked = true;
-		btn.disabled = true;
-	}
-});
-
-function switchLanguage() {
-	languageButtons.forEach(btn => {
-		if(btn.checked) {
-			window.location.pathname = btn.value;
-		}
-	})
-}
-
-modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal));
-
-function toggleModal() {
-	modals.forEach(modal => modal.classList.toggle("opacity-0"));
-	modals.forEach(modal => modal.classList.toggle("invisible"));
-	gearTrigger?.classList.toggle("rotate-180");
-}
-
-function changeColor(color:string) {
-	switch(color) {
-		case 'sky':
-			document.documentElement.style.setProperty('--color-primary', colors.sky[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.sky[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.sky[400]);
-			break;
-		case 'indigo':
-			document.documentElement.style.setProperty('--color-primary', colors.indigo[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.indigo[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.indigo[400]);
-			break;
-		case 'purple':
-			document.documentElement.style.setProperty('--color-primary', colors.purple[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.purple[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.purple[400]);
-			break;
-		case 'red':
-			document.documentElement.style.setProperty('--color-primary', colors.red[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.red[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.red[400]);
-			break;
-		case 'pink':
-			document.documentElement.style.setProperty('--color-primary', colors.pink[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.pink[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.pink[400]);
-			break;
-		case 'orange':
-			document.documentElement.style.setProperty('--color-primary', colors.orange[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.orange[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.orange[400]);
-			break;
-		case 'green':
-			document.documentElement.style.setProperty('--color-primary', colors.green[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.green[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.green[400]);
-			break;
-		default:
-			break;
-	}
-}
-</script>
-
-<nav class='fixed inset-x-0 top-0 bg-white py-4 px-16 z-40'>
+<nav class='fixed inset-x-0 top-0 bg-white dark:bg-gray-900 py-4 px-16 z-40' id="navbar">
 	<ul class='flex grow space-x-8 text-2xl font-medium justify-center text-center text-gray-500 w-full h-full items-center'>
-		<li id="presentation-link" class='flex-shrink font-bold text-black hover:text-black hover:font-bold hover:scale-110 transition duration-300 ease-in-out capitalize'><a href='#presentation'> {t("navigation.presentation")}</a></li>
-		<li id="skills-link" class='flex-none hover:text-black hover:font-bold transition duration-300 ease-in-out capitalize'><a href='#skills'> {t("navigation.skills")}</a></li>
-		<li id="career-link" class='flex-none hover:text-black hover:font-bold transition duration-300 ease-in-out capitalize'><a href='#career'> {t("navigation.career")} </a></li>
-		<li id="projects-link" class='flex-none hover:text-black hover:font-bold transition duration-300 ease-in-out capitalize'><a href='#projects'> {t("navigation.projects")} </a></li>
-		<li id="contact-link" class='flex-none hover:text-black hover:font-bold transition duration-300 ease-in-out capitalize'><a href='#contact'> {t("navigation.contact")}</a></li>
+		<li id="presentation-link" class='flex-none text-black dark:text-white font-bold hover:text-black dark:hover:text-gray-50 transition duration-300 ease-in-out capitalize'><a href='#presentation'> {t("navigation.presentation")}</a></li>
+		<li id="skills-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#skills'> {t("navigation.skills")}</a></li>
+		<li id="career-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#career'> {t("navigation.career")} </a></li>
+		<li id="projects-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#projects'> {t("navigation.projects")} </a></li>
+		<li id="contact-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#contact'> {t("navigation.contact")}</a></li>
 	</ul>
-	<Icon class='fixed active:rotate-180 cursor-pointer top-5 right-10 hover:rotate-180 transition duration-300 ease-in h-6 w-6' pack='ph' name='gear-six-fill' id="gearTrigger"/>
+	<Icon class='fixed dark:text-gray-100 active:rotate-180 cursor-pointer top-5 right-10 hover:rotate-180 transition duration-300 ease-in h-6 w-6' pack='ph' name='gear-six-fill' id="gearTrigger"/>
 </nav>
 
 <div class="w-screen h-screen fixed z-40 bg-slate-900/5 opacity-0 transition-all duration-100 ease-in invisible" id="modalOverlay"> </div>
@@ -159,17 +37,30 @@ function changeColor(color:string) {
 			{palette.map((color)=> (
 				<label>
 					<input type="radio" class="sr-only peer" value={color} name="colorSwitcher" id={`${color}-button`}/>
-					<span for="colorThemes" class={`flex justify-center items-center transition bg-${color}-500 peer-checked:rounded-full peer-checked:hover:scale-100 peer-checked:cursor-default rounded-xl hover:scale-105 cursor-pointer h-12 w-12`} id={color} />
+					<span for="colorSwitcher" class={`flex justify-center items-center transition bg-${color}-500 peer-checked:rounded-full peer-checked:hover:scale-100 peer-checked:cursor-default rounded-xl hover:scale-105 cursor-pointer h-12 w-12`} id={color} />
 				</label>
-			))}
+				))}
+				<label>
+					<input type="radio" class="sr-only peer" value="random" name="colorSwitcher" id="random-button"/>
+					<Icon pack="ph" name="shuffle-angular" for="colorSwitcher" class="flex p-2 bg-gray-200 justify-center items-center transition peer-checked:rounded-full peer-checked:hover:scale-100 rounded-xl hover:scale-105 cursor-pointer h-12 w-12" id="random" />
+				</label>
 		</div>
 	</div>
 	<div class="flex flex-col">
 		<span class="pb-2 block text-lg font-bold capitalize"> {t("settings.theme")} </span>
 		<div class="grid grid-cols-3 gap-4 font-medium px-4">
-			<Icon class="w-12 h-12 p-2 cursor-pointer" pack="ph" name="sun" />
-			<Icon class="w-12 h-12 bg-gray-200 rounded-full p-2 cursor-pointer" pack="ph" name="arrows-counter-clockwise" />
-			<Icon class="w-12 h-12 p-2 cursor-pointer" pack="ph" name="moon" />
+			<label>
+				<input type="radio" class="sr-only peer" value="light" name="darkModeSwitcher" id="lightModeInput">
+				<Icon class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer" pack="ph" name="sun" id="lightMode" for="darkModeSwitcher"/>
+			</label>
+			<label>
+				<input type="radio" class="sr-only peer" value="auto" name="darkModeSwitcher" id="autoModeInput">
+				<Icon class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer" pack="ph" name="arrows-counter-clockwise" for="darkModeSwitcher"/>
+			</label>
+			<label>
+				<input type="radio" class="sr-only peer" value="dark" name="darkModeSwitcher" id="darkModeInput">
+				<Icon class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer" pack="ph" name="moon" for="darkModeSwitcher"/>
+			</label>
 		</div>
 	</div>
 </div>

@@ -3,8 +3,8 @@ export default {
 	defaultLanguage: "fr",
 	supportedLanguages: ["en", "fr"],
 	i18next: {
-		debug: true,
-		initImmediate: false,
+		debug: false,
+		initImmediate: true,
 		backend: {
 			loadPath: "./src/locales/{{lng}}.json",
 		},

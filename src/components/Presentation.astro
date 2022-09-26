@@ -5,15 +5,15 @@ import { t } from "i18next";
 ---
 
 <section class="w-screen h-screen flex justify-center items-center" id="presentation">
-	<Image src="src/assets/images/profil.png" alt="Profile picture" width="aspectRatio" height="aspectRatio" aspectRatio={1} class="w-[256px] 2xl:w-[384px] mr-12" />
+	<Image src="src/assets/images/profil.webp" alt="Profile picture" width="aspectRatio" height="aspectRatio" aspectRatio={1} class="w-[256px] 2xl:w-[384px] mr-12" />
 	<div class="flex flex-col">
-		<h1 class="block text-5xl 2xl:text-6xl font-bold pb-2">Alexis De Chiara</h1>
-		<h2 class="block text-3xl 2xl:text-5xl font-medium max-w-fit">
-			<Trans i18nKey="presentation.description">Développeur <span class="text-primary"> front-end </span> & <span class="text-primary"> UX/UI</span> Designer</Trans>
+		<h1 class="block text-5xl 2xl:text-6xl font-bold pb-2 dark:text-gray-100">Alexis De Chiara</h1>
+		<h2 class="block text-3xl 2xl:text-5xl font-medium max-w-fit dark:text-gray-100">
+			<Trans i18nKey="presentation.description">Développeur <span class="text-primary dark:text-primary-light"> front-end </span> & <span class="text-primary dark:text-primary-light"> UX/UI</span> Designer</Trans>
 		</h2>
 		<a
 			href="#"
-			class="w-fit inline rounded-full border-2 ease-in-out transition duration-150 border-primary text-primary hover:bg-primary hover:text-white uppercase mt-4 px-4 py-2">
+			class="w-fit font-bold inline rounded-full border-2 ease-in-out transition duration-150 border-primary dark:border-primary-light text-primary dark:text-primary-light hover:bg-primary dark:hover:bg-primary-light hover:text-white dark:hover:text-white uppercase mt-4 px-4 py-2">
 			{t("presentation.contact")}
 		</a>
 	</div>

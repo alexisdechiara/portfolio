@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --color-primary-light: theme(colors.indigo.400);
-    --color-primary: theme(colors.indigo.500);
-    --color-primary-dark: theme(colors.indigo.600);
+    --color-primary-light: theme(colors.gray.400);
+    --color-primary: theme(colors.gray.500);
+    --color-primary-dark: theme(colors.gray.600);
   }
 }

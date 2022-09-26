@@ -6,11 +6,11 @@ import { t } from "i18next";
 
 <section class="flex justify-center items-center pt-24 mt-24 flex-col" id="career">
 	<div class="mb-24">
-		<h3 class="text-center font-bold text-4xl pb-2">{t("career.title")}</h3>
-		<span class="font-medium text-xl">{t("career.subtitle")}</span>
+		<h3 class="text-center font-bold text-4xl pb-2 dark:text-gray-100">{t("career.title")}</h3>
+		<span class="font-medium text-xl dark:text-gray-100">{t("career.subtitle")}</span>
 	</div>
 	<div class="flex flex-col relative w-full px-24 space-y-16">
-		<span class="bg-primary-dark w-2 h-full mb-16 absolute left-1/2 -translate-x-1"></span>
+		<span class="bg-primary-dark dark:bg-primary w-2 h-full mb-16 absolute left-1/2 -translate-x-1"></span>
 		<EmptyLine />
 
 		<div class="flex items-center h-[300px]">
@@ -23,15 +23,15 @@ import { t } from "i18next";
 					map="https://goo.gl/maps/3WiJWewYvVLdTL866"
 				/>
 			</div>
-			<span class="border-primary-dark bg-primary-dark border-[16px] rounded-full -translate-x-4 mr-8"></span>
-			<span class="text-4xl font-bold text-primary-dark"> 2019 </span>
+			<span class="border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary border-[16px] rounded-full -translate-x-4 mr-8"></span>
+			<span class="text-4xl font-bold text-primary-dark dark:text-primary"> 2019 </span>
 		</div>
 
 		<EmptyLine />
 
 		<div class="flex items-center justify-end h-[300px]">
-			<span class="text-4xl font-bold text-primary-dark"> 2021 </span>
-			<span class="border-primary-dark bg-primary-dark border-[16px] rounded-full translate-x-12 mr-8"></span>
+			<span class="text-4xl font-bold text-primary-dark dark:text-primary"> 2021 </span>
+			<span class="border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary border-[16px] rounded-full translate-x-12 mr-8"></span>
 			<div class="w-1/2 justify-end flex">
 				<Block
 					title={t("career.2021.title")}
@@ -53,12 +53,12 @@ import { t } from "i18next";
 					map="https://goo.gl/maps/Up5a7iSAJXj4He9NA"
 				/>
 			</div>
-			<span class="border-primary-dark bg-primary-dark border-[16px] rounded-full -translate-x-4 mr-8"></span>
-			<span class="text-4xl font-bold text-primary-dark"> 2022 </span>
+			<span class="border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary border-[16px] rounded-full -translate-x-4 mr-8"></span>
+			<span class="text-4xl font-bold text-primary-dark dark:text-primary"> 2022 </span>
 		</div>
 	</div>
 	<div class="relative h-32 w-4">
-		<span class="border-r-8 border-dashed border-primary-dark absolute h-full -mt-1 left-1/2 -translate-x-1"></span>
-		<div class="bg-gradient-to-t from-white absolute h-full w-full"></div>
+		<span class="border-r-8 border-dashed border-primary-dark dark:border-primary absolute h-full -mt-1 left-1/2 -translate-x-1"></span>
+		<div class="bg-gradient-to-t from-white dark:from-gray-900 absolute h-full w-full"></div>
 	</div>
 </section>

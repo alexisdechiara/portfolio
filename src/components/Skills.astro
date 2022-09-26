@@ -4,18 +4,18 @@ import { Icon } from 'astro-icon';
 import { t } from "i18next";
 ---
 
-<section class='flex items-center justify-center min-h-screen pt-24 pb-96 px-48 bg-primary-dark' id="skills">
-	<div class='flex flex-col text-white'>
+<section class='flex items-center justify-center min-h-screen pt-24 pb-96 px-48 bg-primary-dark dark:bg-primary' id="skills">
+	<div class='flex flex-col text-white dark:text-gray-100'>
 		<h3 class='text-4xl mb-2 font-bold text-center'>{t("skills.welcome")}</h3>
 		<span class='text-xl font-medium text-center'>{t("skills.description")}</span>
 	</div>
 </section>
 
 <section class='flex justify-center items-center'>
-	<div class='flex bg-white shadow-md border h-fill w-3/5 rounded-xl -mt-72'>
-		<div class='flex-1 flex-col border-r justify-center items-center py-8 px-12'>
+	<div class='flex bg-white dark:bg-gray-800 dark:text-gray-100 shadow-md border dark:border-gray-800 h-fill w-3/5 rounded-xl -mt-72'>
+		<div class='flex-1 flex-col border-r dark:border-gray-700 justify-center items-center py-8 px-12'>
 			<div class='flex flex-col justify-center items-center mb-8'>
-				<Icon class='mb-8 p-4 w-24 text-primary-dark bg-gray-100 rounded-full' pack="ph" name="code" />
+				<Icon class='mb-8 p-4 w-24 text-primary dark:text-primary-light bg-gray-100 dark:bg-gray-700 rounded-full' pack="ph" name="code" />
 				<h4 class='text-2xl font-bold pb-2'>{t("skills.firstColumn.title")}</h4>
 				<span class='text-md text-center'>{t("skills.firstColumn.subtitle")}</span>
 			</div>
@@ -24,7 +24,7 @@ import { t } from "i18next";
 		</div>
 		<div class='flex-1 flex-col justify-center items-center py-8 px-12'>
 			<div class='flex flex-col justify-center items-center mb-8'>
-				<Icon class='mb-8 p-4 w-24 text-primary-dark bg-gray-100 rounded-full' pack="ph" name="palette" />
+				<Icon class='mb-8 p-4 w-24 text-primary dark:text-primary-light bg-gray-100 dark:bg-gray-700 rounded-full' pack="ph" name="palette" />
 				<h4 class='text-2xl font-bold pb-2'>{t("skills.secondColumn.title")}</h4>
 				<span class='text-md text-center'>{t("skills.secondColumn.subtitle")}</span>
 			</div>
