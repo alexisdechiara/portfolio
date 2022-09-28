@@ -51,7 +51,7 @@ const projects = [
 		<h3 class="font-bold text-4xl pb-2 dark:text-gray-100">{t("projects.title")}</h3>
 		<span class="font-medium text-xl dark:text-gray-100">{t("projects.subtitle")}</span>
 	</div>
-	<div class="w-full grid grid-cols-3 gap-8 px-32">
+	<div class="w-full grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 ultrawide:grid-cols-5 gap-8 px-16 laptop:px-24 desktop:px-32 ultrawide:px-48">
 		{projects.map((content) => (
 			<Project content={content}/>
 		))}

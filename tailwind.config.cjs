@@ -5,12 +5,16 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: { sans: "Noto Sans" },
-		},
-		extend: {
 			colors: {
 				primary: "var(--color-primary)",
 				"primary-light": "var(--color-primary-light)",
 				"primary-dark": "var(--color-primary-dark)",
+			},
+			screens: {
+				tablet: "768px",
+				laptop: "1024px",
+				desktop: "1280px",
+				ultrawide: "1440px",
 			},
 		},
 	},

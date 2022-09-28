@@ -4,16 +4,16 @@ import { Trans } from "astro-i18next/components";
 import { t } from "i18next";
 ---
 
-<section class="w-screen h-screen flex justify-center items-center" id="presentation">
-	<Image src="src/assets/images/profil.webp" alt="Profile picture" width="aspectRatio" height="aspectRatio" aspectRatio={1} class="w-[256px] 2xl:w-[384px] mr-12" />
+<section class="w-screen h-screen flex justify-center items-center flex-col tablet:flex-row space-y-4 tablet:space-x-12" id="presentation">
+	<Image src="src/assets/images/profil.webp" alt="Profile picture" width="aspectRatio" height="aspectRatio" aspectRatio={1} class="w-56 laptop:w-64 ultrawide:w-96" />
 	<div class="flex flex-col">
-		<h1 class="block text-5xl 2xl:text-6xl font-bold pb-2 dark:text-gray-100">Alexis De Chiara</h1>
-		<h2 class="block text-3xl 2xl:text-5xl font-medium max-w-fit dark:text-gray-100">
+		<h1 class="block text-3xl tablet:text-4xl laptop:text-5xl ultrawide:text-6xl font-bold tablet:pb-2 tablet:pr-6 dark:text-gray-100">Alexis De Chiara</h1>
+		<h2 class="block text-2xl tablet:text-3xl laptop:text-4xl ultrawide:text-5xl font-medium max-w-fit dark:text-gray-100">
 			<Trans i18nKey="presentation.description">Développeur <span class="text-primary dark:text-primary-light"> front-end </span> & <span class="text-primary dark:text-primary-light"> UX/UI</span> Designer</Trans>
 		</h2>
 		<a
-			href="#"
-			class="w-fit font-bold inline rounded-full border-2 ease-in-out transition duration-150 border-primary dark:border-primary-light text-primary dark:text-primary-light hover:bg-primary dark:hover:bg-primary-light hover:text-white dark:hover:text-white uppercase mt-4 px-4 py-2">
+			href="#contact"
+			class="w-full text-center tablet:w-fit text-sm tablet:text-md laptop:text-lg font-bold inline rounded-full border-2 ease-in-out transition duration-150 border-primary dark:border-primary-light text-primary dark:text-primary-light hover:bg-primary dark:hover:bg-primary-light hover:text-white dark:hover:text-white uppercase mt-4 px-2 py-1 tablet:px-4 tablet:py-2">
 			{t("presentation.contact")}
 		</a>
 	</div>

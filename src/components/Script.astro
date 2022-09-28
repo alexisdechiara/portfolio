@@ -11,6 +11,30 @@ const darkModeSwitchers = <NodeListOf<HTMLInputElement>>document.getElementsByNa
 const sections = <NodeListOf<HTMLElement>>document.querySelectorAll("#presentation, #skills, #career, #projects, #contact");
 const links = document.querySelectorAll("#presentation-link, #skills-link, #career-link, #projects-link, #contact-link");
 const navbar = <HTMLElement>document.getElementById("navbar");
+const linksList = <HTMLElement>document.getElementById("links-list");
+const mobileNav = <HTMLElement>document.getElementById("mobile-nav");
+const burger = <HTMLElement>document.getElementById("burger-icon");
+const close = <HTMLElement>document.getElementById("close-icon");
+
+mobileNav.addEventListener("click", function(){
+	linksList.classList.toggle("hidden");
+	burger.classList.toggle("hidden");
+	close.classList.toggle("hidden");
+	linksList.classList.toggle("flex");
+	gearTrigger.classList.toggle("hidden");
+});
+
+addEventListener('resize', function() {
+	gearTrigger.classList.remove("hidden");
+});
+
+links.forEach(link => link.addEventListener("click", function () {
+	linksList.classList.add("hidden");
+	linksList.classList.remove("flex");
+	burger.classList.remove("hidden");
+	close.classList.add("hidden");
+	gearTrigger.classList.remove("hidden");
+}));
 
 darkModeSwitchers.forEach(btn => btn.addEventListener("click", function() {
 	switchMode(btn.value);
@@ -30,15 +54,13 @@ function checkDarkmode() {
 function switchMode(mode:string) {
 	localStorage.theme = mode;
 	if (localStorage.theme == "dark" || (localStorage.theme == "auto" && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-		 document.documentElement.classList.add('dark');
+		document.documentElement.classList.add('dark');
 	} else {
 		document.documentElement.classList.remove('dark');
 	}
 }
 
-window.onscroll = () => {
-	checkScroll();
-}
+window.addEventListener('scroll', checkScroll);
 
 function checkScroll () {
 	sections.forEach(section => {
@@ -46,24 +68,24 @@ function checkScroll () {
 			links.forEach(link => {
 				link.classList.remove("text-gray-100", "hover:text-gray-100");
 				gearTrigger.classList.remove("text-gray-100");
+				mobileNav.classList.remove("text-gray-100");
 					if(link.id == section.id + "-link") {
 						if (section.id == "contact") {
 							navbar.classList.add("bg-slate-900");
 							navbar.classList.remove("bg-white");
 							link.classList.add("text-gray-100", "hover:text-gray-100");
 							gearTrigger.classList.add("text-gray-100");
+							mobileNav.classList.add("text-gray-100");
 						}
 						link.classList.add("text-black", "dark:text-white", "font-bold");
 					} else {
 						if (section.id == "contact") {
 							link.classList.add("text-gray-500", "hover:text-gray-100");
-						} else {
-							link.classList.remove("text-gray-500");
-							link.classList.add("hover:text-black");
 						}
-						link.classList.remove("text-black", "dark:text-white", "font-bold");
-						navbar.classList.remove("bg-slate-900");
+						link.classList.add("hover:text-black");
+						link.classList.remove("text-gray-500", "text-black", "dark:text-white", "font-bold");
 						navbar.classList.add("bg-white");
+						navbar.classList.remove("bg-slate-900");
 					}
 				})
 		} else {

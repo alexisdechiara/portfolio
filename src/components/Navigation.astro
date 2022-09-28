@@ -5,15 +5,20 @@ import { t } from "i18next";
 let palette = ['sky','indigo','purple','orange','red','pink','green'];
 ---
 
-<nav class='fixed inset-x-0 top-0 bg-white dark:bg-gray-900 py-4 px-16 z-40' id="navbar">
-	<ul class='flex grow space-x-8 text-2xl font-medium justify-center text-center text-gray-500 w-full h-full items-center'>
-		<li id="presentation-link" class='flex-none text-black dark:text-white font-bold hover:text-black dark:hover:text-gray-50 transition duration-300 ease-in-out capitalize'><a href='#presentation'> {t("navigation.presentation")}</a></li>
-		<li id="skills-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#skills'> {t("navigation.skills")}</a></li>
-		<li id="career-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#career'> {t("navigation.career")} </a></li>
-		<li id="projects-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#projects'> {t("navigation.projects")} </a></li>
-		<li id="contact-link" class='flex-none hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#contact'> {t("navigation.contact")}</a></li>
+<nav class='flex tablet:items-center tablet:justify-center fixed inset-x-0 top-0 bg-white dark:bg-gray-900 py-4 px-8 z-40' id="navbar">
+	<div class="tablet:hidden" id='mobile-nav'>
+		<Icon class="tablet:hidden h-6 w-6 cursor-pointer" pack='ph' name='list-bold' id="burger-icon"/>
+		<Icon class="hidden h-6 w-6 cursor-pointer" pack='ph' name='x-bold' id="close-icon"/>
+	</div>
+	<div class="flex tablet:hidden grow"/>
+	<ul class='hidden tablet:flex flex-col tablet:flex-row grow space-y-8 tablet:space-y-0 tablet:space-x-8 text-2xl tablet:text-xl laptop:text-2xl ultrawide:text-3xl font-medium justify-evenly tablet:justify-center text-center text-gray-500 w-full h-screen tablet:h-full items-center' id="links-list">
+		<li id="presentation-link" class='text-black dark:text-white font-bold hover:text-black dark:hover:text-gray-50 transition duration-300 ease-in-out capitalize'><a href='#presentation'> {t("navigation.presentation")}</a></li>
+		<li id="skills-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#skills'> {t("navigation.skills")}</a></li>
+		<li id="career-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#career'> {t("navigation.career")} </a></li>
+		<li id="projects-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#projects'> {t("navigation.projects")} </a></li>
+		<li id="contact-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#contact'> {t("navigation.contact")}</a></li>
 	</ul>
-	<Icon class='fixed dark:text-gray-100 active:rotate-180 cursor-pointer top-5 right-10 hover:rotate-180 transition duration-300 ease-in h-6 w-6' pack='ph' name='gear-six-fill' id="gearTrigger"/>
+	<Icon class='flex dark:text-gray-100 active:rotate-180 cursor-pointer hover:rotate-180 transition-transform duration-300 ease-in h-6 w-6' pack='ph' name='gear-six-fill' id="gearTrigger"/>
 </nav>
 
 <div class="w-screen h-screen fixed z-40 bg-slate-900/5 opacity-0 transition-all duration-100 ease-in invisible" id="modalOverlay"> </div>
