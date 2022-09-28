@@ -1,4 +1,7 @@
 {
+	"meta": {
+		"description": "Alexis De Chiara's portfolio site (Front-end developer & UX/UI designer) including all diplomas, projects and ways to contact me."
+	},
 	"navigation": {
 		"presentation": "presentation",
 		"skills": "skills",
@@ -83,7 +86,7 @@
 		}
 	},
 	"contact": {
-		"title": "contact",
+		"title": "Contact me",
 		"name": "name",
 		"email": "email",
 		"message": "message",

@@ -1,4 +1,7 @@
 {
+	"meta": {
+		"description": "Site portfolio de Alexis De Chiara (Développeur Front-end & UX/UI designer) comprenant l'ensembles des diplomes, projets et moyens de me contacter."
+	},
 	"navigation": {
 		"presentation": "présentation",
 		"skills": "compétences",
@@ -83,7 +86,7 @@
 		}
 	},
 	"contact": {
-		"title": "contact",
+		"title": "Me contacter",
 		"name": "nom",
 		"email": "courriel",
 		"message": "message",
