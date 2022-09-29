@@ -13,6 +13,7 @@
 		"@astrojs/image": "^0.7.0",
 		"@astrojs/netlify": "^1.0.4",
 		"@astrojs/tailwind": "^1.0.0",
+		"@astrojs/vercel": "^2.0.1",
 		"astro": "^1.2.2",
 		"astro-i18next": "^1.0.0-beta.10",
 		"astro-icon": "^0.7.3",
