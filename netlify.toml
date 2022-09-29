@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  
+[functions]
+    node_bundler = "esbuild"
+    external_node_modules = ["svgo", "tsm", "@proload/core", "i18next-fs-backend", "astro"]
