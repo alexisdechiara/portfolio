@@ -1,45 +1,44 @@
 ---
 import Project from "../components/Project.astro";
-import { t } from "i18next";
 
 const projects = [
 	{
-	url: 'src/assets/images/projects/portfolio.webp',
-	alt: `${t("projects.portfolio.alt")}`,
-	title: `${t("projects.portfolio.title")}`,
-	description: `${t("projects.portfolio.description")}`,
+	url: import('../assets/images/projects/portfolio.webp'),
+	alt: "Portfolio",
+	title: "Portfolio",
+	description: "Deuxième version de mon portfolio cette fois réalisé avec Astro et Tailwind.",
 	git: 'https://github.com/alexisdechiara/portfolio',
 	website: '#',
 	},
 	{
-	url: 'src/assets/images/projects/roll20Alternative.webp',
-	alt: `${t("projects.roll20Alternative.alt")}`,
-	title: `${t("projects.roll20Alternative.title")}`,
-	description: `${t("projects.roll20Alternative.description")}`,
+	url: import('../assets/images/projects/roll20Alternative.webp'),
+	alt: "Roll20Alternative",
+	title: "Roll20Alternative",
+	description: "Projet réalisé en équipe de 6 durant la 2e année de DUT Informatique.",
 	git: 'https://github.com/alexisdechiara/Roll20Alternative',
 	website : '#'
 	},
 	{
-	url: 'src/assets/images/projects/concertProject.webp',
-	alt: `${t("projects.concertProject.alt")}`,
-	title: `${t("projects.concertProject.title")}`,
-	description: `${t("projects.concertProject.description")}`,
+	url: import('../assets/images/projects/concertProject.webp'),
+	alt: "ConcertProject",
+	title: "ConcertProject",
+	description: "Projet réalisé seul en licence pro APIDAE et m'ayant nécessité 35h de travail.",
 	git: 'https://github.com/alexisdechiara/ConcertProject',
 	website : '#'
 	},
 	{
-	url: 'src/assets/images/projects/cookandchief.webp',
-	alt: `${t("projects.cookandchief.alt")}`,
-	title: `${t("projects.cookandchief.title")}`,
-	description: `${t("projects.cookandchief.description")}`,
+	url: import('../assets/images/projects/cookandchief.webp'),
+	alt: "Cook&Chief",
+	title: "Cook&Chief",
+	description: "Projet réalisé en cours de licence pro APIDAE avec l'aide d'un designer pour les images.",
 	git: 'https://github.com/alexisdechiara/cookandchief',
 	website : 'https://cookandchief.netlify.app'
 	},
 	{
 	url: "https://source.unsplash.com/random/1080x720/?metrics",
-	alt: `${t("projects.utility-tools.alt")}`,
-	title: `${t("projects.utility-tools.title")}`,
-	description: `${t("projects.utility-tools.description")}`,
+	alt: "Utility Tools",
+	title: "Utility Tools",
+	description: "Site permettant de rassembler un ensemble de fonctionnalités pratiques.",
 	git: 'https://github.com/alexisdechiara/utility-tools',
 	website : 'https://alexisdechiara.github.io/utility-tools/'
 	}
@@ -48,8 +47,8 @@ const projects = [
 
 <section class="pt-24 mt-24 mb-32" id="projects">
 	<div class="mb-16 text-center">
-		<h3 class="font-bold text-4xl pb-2 dark:text-gray-100">{t("projects.title")}</h3>
-		<span class="font-medium text-xl dark:text-gray-100">{t("projects.subtitle")}</span>
+		<h3 class="font-bold text-4xl pb-2 dark:text-gray-100">Mes projets</h3>
+		<span class="font-medium text-xl dark:text-gray-100">Voici les projets personnels que j’ai réalisés.</span>
 	</div>
 	<div class="w-full grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 ultrawide:grid-cols-5 gap-8 px-16 laptop:px-24 desktop:px-32 ultrawide:px-48">
 		{projects.map((content) => (

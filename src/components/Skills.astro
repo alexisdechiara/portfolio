@@ -1,13 +1,12 @@
 ---
 import Column from './Column.astro';
 import { Icon } from 'astro-icon';
-import { t } from "i18next";
 ---
 
 <section class='flex items-center justify-center w-screen h-screen pt-64 tablet:pt-24 pb-96 px-8 tablet:px-16 laptop:px-32 desktop:px-48 bg-primary-dark dark:bg-primary' id="skills">
 	<div class='flex flex-col text-white dark:text-gray-100'>
-		<h3 class='text-4xl pb-4 font-bold text-center'>{t("skills.welcome")}</h3>
-		<span class='text-xl font-medium text-justify tablet:text-center'>{t("skills.description")}</span>
+		<h3 class='text-4xl pb-4 font-bold text-center'>Bienvenue sur mon site portfolio</h3>
+		<span class='text-xl font-medium text-justify tablet:text-center'>Si tu es ici, c’est pour voir mes compétences et en savoir plus sur ce que j’ai fait alors sache que tu es au bon endroit : je suis un développeur web front-end qui aime aussi réaliser des maquettes en UI/UX. Très autodidacte, je suis depuis toujours passionné par l’informatique et les nouvelles technologies.</span>
 	</div>
 </section>
 
@@ -16,19 +15,19 @@ import { t } from "i18next";
 		<div class='flex-1 flex-col tablet:border-r dark:border-gray-700 justify-center items-center py-8 px-12'>
 			<div class='flex flex-col justify-center items-center mb-8'>
 				<Icon class='mb-8 p-4 w-24 text-primary dark:text-primary-light bg-gray-100 dark:bg-gray-700 rounded-full' pack="ph" name="code" />
-				<h4 class='text-2xl text-center font-bold pb-2'>{t("skills.firstColumn.title")}</h4>
-				<span class='text-md text-center'>{t("skills.firstColumn.subtitle")}</span>
+				<h4 class='text-2xl text-center font-bold pb-2'> Développeur Front-end </h4>
+				<span class='text-md text-center'> Je peux programmer un site web en entier, mais j’ai tout de même une préférence pour le front-end </span>
 			</div>
-			<Column title={t("skills.firstColumn.language")} content={['HTML, CSS, JavaScript, TypeScript, PHP, Java, C, C#, Access, MySQL, PostgreSQL, Oracle Database, Firebase']} />
-			<Column title={t("skills.firstColumn.framework")} content={['Angular', 'react', 'Vue', 'Astro', 'Synfony', 'Laravel', 'Spring', 'Bootstrap', 'Tailwind']} />
+			<Column title="Langages" content={['HTML, CSS, JavaScript, TypeScript, PHP, Java, C, C#, Access, MySQL, PostgreSQL, Oracle Database, Firebase']} />
+			<Column title="Frameworks" content={['Angular', 'react', 'Vue', 'Astro', 'Synfony', 'Laravel', 'Spring', 'Bootstrap', 'Tailwind']} />
 		</div>
 		<div class='flex-1 flex-col justify-center items-center py-8 px-12'>
 			<div class='flex flex-col justify-center items-center mb-8'>
 				<Icon class='mb-8 p-4 w-24 text-primary dark:text-primary-light bg-gray-100 dark:bg-gray-700 rounded-full' pack="ph" name="palette" />
-				<h4 class='text-2xl text-center font-bold pb-2'>{t("skills.secondColumn.title")}</h4>
-				<span class='text-md text-center'>{t("skills.secondColumn.subtitle")}</span>
+				<h4 class='text-2xl text-center font-bold pb-2'>UI/UX Designer</h4>
+				<span class='text-md text-center'>J’ai toujours aimé que les choses soient belles, c’est donc tout logiquement que je m’intéresse aussi à l’UI/UX design.</span>
 			</div>
-			<Column title={t("skills.secondColumn.tools")} content={['Figma', 'Photoshop', 'Premiere Pro', 'DaVinci Resolve']} />
+			<Column title="Outils de conception" content={['Figma', 'Photoshop', 'Premiere Pro', 'DaVinci Resolve']} />
 		</div>
 	</div>
 </section>

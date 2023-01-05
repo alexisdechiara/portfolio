@@ -1,21 +1,23 @@
 import { defineConfig } from "astro/config";
 import image from "@astrojs/image";
-import astroI18next from "astro-i18next";
 import tailwind from "@astrojs/tailwind";
+import partytown from "@astrojs/partytown";
 
-import netlify from "@astrojs/netlify/functions";
-// import vercel from "@astrojs/vercel/serverless";
-// import node from "@astrojs/node"
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://alexisdechiara.fr",
 	integrations: [
-		astroI18next(),
-		tailwind({ config: { applyBaseStyles: false } }),
+		tailwind({
+			config: {
+				applyBaseStyles: false,
+			},
+		}),
 		image({
 			serviceEntryPoint: "@astrojs/image/sharp",
 		}),
+		partytown(),
+		sitemap(),
 	],
-	output: "server",
-	adapter: netlify(),
 });

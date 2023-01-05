@@ -1,6 +1,4 @@
 ---
-import { t } from "i18next";
-
 export interface Props {
 	title: string;
 	location: string;
@@ -17,7 +15,7 @@ const { title, location, description, website, map } = Astro.props;
 	<span class="text-sm tablet:text-md desktop:text-lg font-light dark:text-gray-100"> {location}</span>
 	<p class="text-xs tablet:text-sm laptop:text-md font-medium text-justify pb-4 tablet:pt-2 grow dark:text-gray-100">{description}</p>
 	<div class="flex justify-end space-x-2">
-		<a href={website} target="_blank" class="bg-primary dark:bg-primary-light hover:bg-primary-light text-white p-2 transition duration-75 ease-in-out capitalize"> {t("block.website")}</a>
-		<a href={map} target="_blank" class="bg-primary dark:bg-primary-light hover:bg-primary-light text-white p-2 transition duration-75 ease-in-out capitalize"> {t("block.map")}</a>
+		<a href={website} target="_blank" class="bg-primary dark:bg-primary-light hover:bg-primary-light text-white p-2 transition duration-75 ease-in-out capitalize"> site web</a>
+		<a href={map} target="_blank" class="bg-primary dark:bg-primary-light hover:bg-primary-light text-white p-2 transition duration-75 ease-in-out capitalize"> carte</a>
 	</div>
 </div>
