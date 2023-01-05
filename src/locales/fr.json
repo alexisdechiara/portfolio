@@ -1,100 +1,100 @@
 {
-	"meta": {
-		"description": "Site portfolio de Alexis De Chiara (Développeur Front-end & UX/UI designer) comprenant l'ensembles des diplomes, projets et moyens de me contacter."
-	},
-	"navigation": {
-		"presentation": "présentation",
-		"skills": "compétences",
-		"career": "carrière",
-		"projects": "projets",
-		"contact": "contact"
-	},
-	"settings": {
-		"language": "langue",
-		"color": "couleur",
-		"theme": "thème"
-	},
-	"presentation": {
-		"description": "Développeur <0> Front-end </0> & <1> UX/UI </1> designer",
-		"contact": "me contacter"
-	},
-	"skills": {
-		"welcome": "Bienvenue sur mon site portfolio",
-		"description": "Si tu es ici, c’est pour voir mes compétences et en savoir plus sur ce que j’ai fait alors sache que tu es au bon endroit : je suis un développeur web front-end qui aime aussi réaliser des maquettes en UI/UX. Très autodidacte, je suis depuis toujours passionné par l’informatique et les nouvelles technologies.",
-		"firstColumn": {
-			"title": "Développeur Front-end",
-			"subtitle": "Je peux programmer un site web en entier, mais j’ai tout de même une préférence pour le front-end",
-			"language": "Langages",
-			"framework": "Frameworks"
-		},
-		"secondColumn": {
-			"title": "UI/UX Designer",
-			"subtitle": "J’ai toujours aimé que les choses soient belles, c’est donc tout logiquement que je m’intéresse aussi à l’UI/UX design.",
-			"tools": "Outils de conception"
-		}
-	},
-	"career": {
-		"title": "Mon parcourt",
-		"subtitle": "Voici les études que j’ai faites durant mes années scolaires.",
-		"2019": {
-			"title": "Baccalauréat Scientifique",
-			"location": "Lycée Calmette de Nice",
-			"description": "Option ISN avec de la programmation en Java mais aussi l'apprentissage du HTML 5 et CSS 3."
-		},
-		"2021": {
-			"title": "DUT Informatique",
-			"location": "IUT Nice Côte D’azur",
-			"description": "Formation initiale menant sur l'apprentissage de l'ensemble des types de langage de programmation existants."
-		},
-		"2022": {
-			"title": "Licence pro APIDAE",
-			"location": "IUT Montpellier-Sète",
-			"description": "Cours en alternance avec l'entreprise Orange Business Services dans le but de poursuivre les études en informatique dans le domaine du web, parcours : Assistant de Projet Informatique, Développement d’Application E-business."
-		}
-	},
-	"block": {
-		"website": "site web",
-		"map": "carte"
-	},
-	"projects": {
-		"title": "Mes projets",
-		"subtitle": "Voici les projets personnels que j’ai réalisés.",
-		"portfolio": {
-			"alt": "Portfolio",
-			"title": "Portfolio",
-			"description": "Deuxième version de mon portfolio cette fois réalisé avec Astro et Tailwind."
-		},
-		"roll20Alternative": {
-			"alt": "Roll20Alternative",
-			"title": "Roll20Alternative",
-			"description": "Projet réalisé en équipe de 6 durant la 2e année de DUT Informatique."
-		},
-		"concertProject": {
-			"alt": "ConcertProject",
-			"title": "ConcertProject",
-			"description": "Projet réalisé seul en licence pro APIDAE et m'ayant nécessité 35h de travail."
-		},
-		"cookandchief": {
-			"alt": "Cook&Chief",
-			"title": "Cook&Chief",
-			"description": "Projet réalisé en cours de licence pro APIDAE avec l'aide d'un designer pour les images."
-		},
-		"utility-tools": {
-			"alt": "Utility Tools",
-			"title": "Utility Tools",
-			"description": "Site permettant de rassembler un ensemble de fonctionnalités pratiques."
-		}
-	},
-	"contact": {
-		"title": "Me contacter",
-		"name": "nom",
-		"email": "courriel",
-		"message": "message",
-		"send": "envoyer"
-	},
-	"footer": {
-		"license": "Site sous licence MIT",
-		"realisation": "Réalisé par Alexis De Chiara et inspiré de <0>mattfarley.ca</0>",
-		"version": "version"
-	}
+  "meta": {
+    "description": "Site portfolio de Alexis De Chiara (Développeur Front-end & UX/UI designer) comprenant l'ensembles des diplomes, projets et moyens de me contacter."
+  },
+  "navigation": {
+    "presentation": "présentation",
+    "skills": "compétences",
+    "career": "carrière",
+    "projects": "projets",
+    "contact": "contact"
+  },
+  "settings": {
+    "language": "langue",
+    "color": "couleur",
+    "theme": "thème"
+  },
+  "presentation": {
+    "description": "Développeur <0> Front-end </0> & <1> UX/UI </1> designer",
+    "contact": "me contacter"
+  },
+  "skills": {
+    "welcome": "Bienvenue sur mon site portfolio",
+    "description": "Si tu es ici, c’est pour voir mes compétences et en savoir plus sur ce que j’ai fait alors sache que tu es au bon endroit : je suis un développeur web front-end qui aime aussi réaliser des maquettes en UI/UX. Très autodidacte, je suis depuis toujours passionné par l’informatique et les nouvelles technologies.",
+    "firstColumn": {
+      "title": "Développeur Front-end",
+      "subtitle": "Je peux programmer un site web en entier, mais j’ai tout de même une préférence pour le front-end",
+      "language": "Langages",
+      "framework": "Frameworks"
+    },
+    "secondColumn": {
+      "title": "UI/UX Designer",
+      "subtitle": "J’ai toujours aimé que les choses soient belles, c’est donc tout logiquement que je m’intéresse aussi à l’UI/UX design.",
+      "tools": "Outils de conception"
+    }
+  },
+  "career": {
+    "title": "Mon parcourt",
+    "subtitle": "Voici les études que j’ai faites durant mes années scolaires.",
+    "2019": {
+      "title": "Baccalauréat Scientifique",
+      "location": "Lycée Calmette de Nice",
+      "description": "Option ISN avec de la programmation en Java mais aussi l'apprentissage du HTML 5 et CSS 3."
+    },
+    "2021": {
+      "title": "DUT Informatique",
+      "location": "IUT Nice Côte D’azur",
+      "description": "Formation initiale menant sur l'apprentissage de l'ensemble des types de langage de programmation existants."
+    },
+    "2022": {
+      "title": "Licence pro APIDAE",
+      "location": "IUT Montpellier-Sète",
+      "description": "Cours en alternance avec l'entreprise Orange Business Services dans le but de poursuivre les études en informatique dans le domaine du web, parcours : Assistant de Projet Informatique, Développement d’Application E-business."
+    }
+  },
+  "block": {
+    "website": "site web",
+    "map": "carte"
+  },
+  "projects": {
+    "title": "Mes projets",
+    "subtitle": "Voici les projets personnels que j’ai réalisés.",
+    "portfolio": {
+      "alt": "Portfolio",
+      "title": "Portfolio",
+      "description": "Deuxième version de mon portfolio cette fois réalisé avec Astro et Tailwind."
+    },
+    "roll20Alternative": {
+      "alt": "Roll20Alternative",
+      "title": "Roll20Alternative",
+      "description": "Projet réalisé en équipe de 6 durant la 2e année de DUT Informatique."
+    },
+    "concertProject": {
+      "alt": "ConcertProject",
+      "title": "ConcertProject",
+      "description": "Projet réalisé seul en licence pro APIDAE et m'ayant nécessité 35h de travail."
+    },
+    "cookandchief": {
+      "alt": "Cook&Chief",
+      "title": "Cook&Chief",
+      "description": "Projet réalisé en cours de licence pro APIDAE avec l'aide d'un designer pour les images."
+    },
+    "utility-tools": {
+      "alt": "Utility Tools",
+      "title": "Utility Tools",
+      "description": "Site permettant de rassembler un ensemble de fonctionnalités pratiques."
+    }
+  },
+  "contact": {
+    "title": "Me contacter",
+    "name": "nom",
+    "email": "courriel",
+    "message": "message",
+    "send": "envoyer"
+  },
+  "footer": {
+    "license": "Site sous licence MIT",
+    "realisation": "Réalisé par Alexis De Chiara et inspiré de <0>mattfarley.ca</0>",
+    "version": "version"
+  }
 }

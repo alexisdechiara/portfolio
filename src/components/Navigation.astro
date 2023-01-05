@@ -1,27 +1,38 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 
-let palette = ['sky','indigo','purple','orange','red','pink','green'];
+let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 ---
 
-<nav class='flex tablet:items-center tablet:justify-center fixed inset-x-0 top-0 bg-white dark:bg-gray-900 py-4 px-8 z-40' id="navbar">
-	<div class="tablet:hidden" id='mobile-nav'>
-		<Icon class="tablet:hidden h-6 w-6 cursor-pointer" pack='ph' name='list-bold' id="burger-icon"/>
-		<Icon class="hidden h-6 w-6 cursor-pointer" pack='ph' name='x-bold' id="close-icon"/>
+<nav class="flex tablet:items-center tablet:justify-center fixed inset-x-0 top-0 bg-white dark:bg-gray-900 py-4 px-8 z-40" id="navbar">
+	<div class="tablet:hidden" id="mobile-nav">
+		<Icon class="tablet:hidden h-6 w-6 cursor-pointer" pack="ph" name="list-bold" id="burger-icon" />
+		<Icon class="hidden h-6 w-6 cursor-pointer" pack="ph" name="x-bold" id="close-icon" />
 	</div>
-	<div class="flex tablet:hidden grow"/>
-	<ul class='hidden tablet:flex flex-col tablet:flex-row grow space-y-8 tablet:space-y-0 tablet:space-x-8 text-2xl tablet:text-xl laptop:text-2xl ultrawide:text-3xl font-medium justify-evenly tablet:justify-center text-center text-gray-500 w-full h-screen tablet:h-full items-center' id="links-list">
-		<li id="presentation-link" class='text-black dark:text-white font-bold hover:text-black dark:hover:text-gray-50 transition duration-300 ease-in-out capitalize'><a href='#presentation'> présentation</a></li>
-		<li id="skills-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#skills' rel='tag'> compétences </a></li>
-		<li id="career-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#career' rel='tag'> carrière </a></li>
-		<li id="projects-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#projects' rel='tag'> projets </a></li>
-		<li id="contact-link" class='hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize'><a href='#contact' rel='tag'> contact</a></li>
+	<div class="flex tablet:hidden grow"></div>
+	<ul
+		class="hidden tablet:flex flex-col tablet:flex-row grow space-y-8 tablet:space-y-0 tablet:space-x-8 text-2xl tablet:text-xl laptop:text-2xl ultrawide:text-3xl font-medium justify-evenly tablet:justify-center text-center text-gray-500 w-full h-screen tablet:h-full items-center"
+		id="links-list">
+		<li id="presentation-link" class="text-black dark:text-white font-bold hover:text-black dark:hover:text-gray-50 transition duration-300 ease-in-out capitalize">
+			<a href="#presentation"> présentation</a>
+		</li>
+		<li id="skills-link" class="hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize"><a href="#skills" rel="tag"> compétences</a></li>
+		<li id="career-link" class="hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize"><a href="#career" rel="tag"> carrière</a></li>
+		<li id="projects-link" class="hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize"><a href="#projects" rel="tag"> projets</a></li>
+		<li id="contact-link" class="hover:text-black dark:hover:text-gray-100 transition duration-300 ease-in-out capitalize"><a href="#contact" rel="tag"> contact</a></li>
 	</ul>
-	<Icon class='flex dark:text-gray-100 active:rotate-180 cursor-pointer hover:rotate-180 transition-transform duration-300 ease-in h-6 w-6' pack='ph' name='gear-six-fill' id="gearTrigger"/>
+	<Icon
+		class="flex dark:text-gray-100 active:rotate-180 cursor-pointer hover:rotate-180 transition-transform duration-300 ease-in h-6 w-6"
+		pack="ph"
+		name="gear-six-fill"
+		id="gearTrigger"
+	/>
 </nav>
 
-<div class="w-screen h-screen fixed z-40 bg-slate-900/5 opacity-0 transition-all duration-100 ease-in invisible" id="modalOverlay"> </div>
-<div class="flex flex-col w-64 rounded-xl bg-white shadow-md opacity-0 border border-gray-100 top-16 fixed right-10 p-4 z-50 space-y-4 transition-all duration-100 ease-in invisible" id="modalContainer">
+<div class="w-screen h-screen fixed z-40 bg-slate-900/5 opacity-0 transition-all duration-100 ease-in invisible" id="modalOverlay"></div>
+<div
+	class="flex flex-col w-64 rounded-xl bg-white shadow-md opacity-0 border border-gray-100 top-16 fixed right-10 p-4 z-50 space-y-4 transition-all duration-100 ease-in invisible"
+	id="modalContainer">
 	<!-- Language is disabled as long as astro-i18next is in beta -->
 	<!-- <div class="flex flex-col">
 		<span class="pb-2 block text-lg font-bold capitalize"> langue </span>
@@ -37,34 +48,62 @@ let palette = ['sky','indigo','purple','orange','red','pink','green'];
 		</div>
 	</div> -->
 	<div class="flex flex-col">
-		<span class="pb-2 block text-lg font-bold capitalize"> couleur </span>
+		<span class="pb-2 block text-lg font-bold capitalize"> couleur</span>
 		<div class="grid grid-cols-3 gap-6 font-medium px-4">
-			{palette.map((color)=> (
-				<label>
-					<input type="radio" class="sr-only peer" value={color} name="colorSwitcher" id={`${color}-button`}/>
-					<span for="colorSwitcher" class={`flex justify-center items-center transition bg-${color}-500 peer-checked:rounded-full peer-checked:hover:scale-100 peer-checked:cursor-default rounded-xl hover:scale-105 cursor-pointer h-12 w-12`} id={color} />
-				</label>
-				))}
-				<label>
-					<input type="radio" class="sr-only peer" value="random" name="colorSwitcher" id="random-button"/>
-					<Icon pack="ph" name="shuffle-angular" for="colorSwitcher" class="flex p-2 bg-gray-200 justify-center items-center transition peer-checked:rounded-full peer-checked:hover:scale-100 rounded-xl hover:scale-105 cursor-pointer h-12 w-12" id="random" />
-				</label>
+			{
+				palette.map(color => (
+					<label>
+						<input type="radio" class="peer sr-only" value={color} name="colorSwitcher" id={`${color}-button`} />
+						<span
+							for="colorSwitcher"
+							class={`flex items-center justify-center transition bg-${color}-500 h-12 w-12 cursor-pointer rounded-xl hover:scale-105 peer-checked:cursor-default peer-checked:rounded-full peer-checked:hover:scale-100`}
+							id={color}
+						/>
+					</label>
+				))
+			}
+			<label>
+				<input type="radio" class="sr-only peer" value="random" name="colorSwitcher" id="random-button" />
+				<Icon
+					pack="ph"
+					name="shuffle-angular"
+					for="colorSwitcher"
+					class="flex p-2 bg-gray-200 justify-center items-center transition peer-checked:rounded-full peer-checked:hover:scale-100 rounded-xl hover:scale-105 cursor-pointer h-12 w-12"
+					id="random"
+				/>
+			</label>
 		</div>
 	</div>
 	<div class="flex flex-col">
-		<span class="pb-2 block text-lg font-bold capitalize"> thème </span>
+		<span class="pb-2 block text-lg font-bold capitalize"> thème</span>
 		<div class="grid grid-cols-3 gap-4 font-medium px-4">
 			<label>
-				<input type="radio" class="sr-only peer" value="light" name="darkModeSwitcher" id="lightModeInput">
-				<Icon class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer" pack="ph" name="sun" id="lightMode" for="darkModeSwitcher"/>
+				<input type="radio" class="sr-only peer" value="light" name="darkModeSwitcher" id="lightModeInput" />
+				<Icon
+					class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
+					pack="ph"
+					name="sun"
+					id="lightMode"
+					for="darkModeSwitcher"
+				/>
 			</label>
 			<label>
-				<input type="radio" class="sr-only peer" value="auto" name="darkModeSwitcher" id="autoModeInput">
-				<Icon class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer" pack="ph" name="arrows-counter-clockwise" for="darkModeSwitcher"/>
+				<input type="radio" class="sr-only peer" value="auto" name="darkModeSwitcher" id="autoModeInput" />
+				<Icon
+					class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
+					pack="ph"
+					name="arrows-counter-clockwise"
+					for="darkModeSwitcher"
+				/>
 			</label>
 			<label>
-				<input type="radio" class="sr-only peer" value="dark" name="darkModeSwitcher" id="darkModeInput">
-				<Icon class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer" pack="ph" name="moon" for="darkModeSwitcher"/>
+				<input type="radio" class="sr-only peer" value="dark" name="darkModeSwitcher" id="darkModeInput" />
+				<Icon
+					class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
+					pack="ph"
+					name="moon"
+					for="darkModeSwitcher"
+				/>
 			</label>
 		</div>
 	</div>
