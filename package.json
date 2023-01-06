@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"type": "module",
 	"license": "MIT",
 	"private": true,
@@ -20,8 +20,10 @@
 		"@astrojs/tailwind": "^1.0.0",
 		"@astrojs/vercel": "^2.0.1",
 		"astro": "^1.2.2",
+		"astro-compress": "^1.1.24",
 		"astro-icon": "^0.7.3",
 		"astro-imagetools": "^0.7.0",
+		"astro-seo": "^0.6.1",
 		"sharp": "^0.31.3"
 	},
 	"devDependencies": {

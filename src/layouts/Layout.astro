@@ -1,21 +1,49 @@
 ---
 import Script from "../components/Script.astro";
+import { SEO } from "astro-seo";
 ---
 
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 scrollbar-thumb hover:scrollbar-thumb-gray-500 scrollbar-track-transparent scrollbar-thumb-rounded-full">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="keywords" content="portfolio, Astro, tailwind">
-    <meta name="author" content="Alexis De Chiara">
-    <meta name="description" content="Site portfolio de Alexis De Chiara (Développeur Front-end & UX/UI designer) comprenant l'ensembles des diplomes, projets et moyens de me contacter.">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
-    <meta name="generator" content={Astro.generator} />
-    <title>Portfolio - Alexis De Chiara</title>
+    <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+
+    <SEO
+      charset="UTF-8"
+      title="Alexis De Chiara - Portfolio"
+      description="Site portfolio de Alexis De Chiara (Développeur Front-end & UX/UI designer) comprenant l'ensembles des diplomes, projets et moyens de me contacter."
+      canonical="https://alexisdechiara.geekly.blog"
+      extend={{
+        // extending the default link tags
+        link: [
+          { rel: "apple-touch-icon", href: "/favicon/apple-touch-icon.png" },
+          { rel: "manifest", href: "/site.webmanifest" },
+          { rel: "preconnect", href: "https://fonts.googleapis.com" },
+          { rel: "preconnect", href: "https://fonts.gstatic.com" },
+          { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" },
+        ],
+        // extending the default meta tags
+        meta: [
+          { name: "viewport", content: "width=device-width", },
+          { name: "keywords", content: "portfolio, Astro, tailwind, Alexis De Chiara" },
+          { name: "author", content: "Alexis De Chiara" },
+          { name: "generator", content: Astro.generator},
+        ],
+      }}
+    />
+
+    <meta property="og:url" content="https://alexisdechiara.geekly.blog">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alexis De Chiara - Portfolio">
+    <meta property="og:description" content="Développeur Front-end & UX/UI designer">
+    <meta property="og:image" content="/portfolio.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="alexisdechiara.geekly.blog">
+    <meta property="twitter:url" content="https://alexisdechiara.geekly.blog">
+    <meta name="twitter:title" content="Alexis De Chiara - Portfolio">
+    <meta name="twitter:description" content="Développeur Front-end & UX/UI designer">
+    <meta name="twitter:image" content="/portfolio.webp">
   </head>
   <body class="bg-white dark:bg-gray-900">
     <Script />

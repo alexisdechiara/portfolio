@@ -29,9 +29,9 @@ let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 	/>
 </nav>
 
-<div class="w-screen h-screen fixed z-40 bg-slate-900/5 opacity-0 transition-all duration-100 ease-in invisible" id="modalOverlay"></div>
+<div class="w-screen h-screen fixed z-40 bg-black/10 dark:bg-black/25 opacity-0 transition-all duration-100 ease-in invisible" id="modalOverlay"></div>
 <div
-	class="flex flex-col w-64 rounded-xl bg-white shadow-md opacity-0 border border-gray-100 top-16 fixed right-10 p-4 z-50 space-y-4 transition-all duration-100 ease-in invisible"
+	class="flex flex-col w-64 rounded-xl bg-white dark:bg-gray-800 shadow-md opacity-0 border border-gray-100 dark:border-gray-900 dark:text-white top-16 fixed right-10 p-4 z-50 space-y-4 transition-all duration-100 ease-in invisible"
 	id="modalContainer">
 	<!-- Language is disabled as long as astro-i18next is in beta -->
 	<!-- <div class="flex flex-col">
@@ -39,11 +39,11 @@ let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 		<div class="grid grid-cols-2 gap-4 px-4">
 			<label>
 				<input class="sr-only peer" type="radio" name="languageSwitcher" id="frenchButton" value="/"/> 
-				<span class="px-2 py-1 text-center peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:text-gray-900 peer-checked:cursor-default text-gray-500 cursor-pointer font-medium text-lg" for="frenchButton" id="frenchLabel"> Français </span>
+				<span class="px-2 py-1 text-center peer-checked:bg-gray-200 dark:peer-checked:bg-gray-600 peer-checked:rounded-full peer-checked:text-gray-900 peer-checked:cursor-default text-gray-500 cursor-pointer font-medium text-lg" for="frenchButton" id="frenchLabel"> Français </span>
 			</label>
 			<label>
 				<input class="sr-only peer" disabled type="radio" name="languageSwitcher" id="englishButton" value="/en"/> 
-				<span class="px-2 py-1 text-center peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:text-gray-900 peer-checked:cursor-default text-gray-500 cursor-pointer font-medium text-lg" for="englishButton" id="englishLabel"> English </span>
+				<span class="px-2 py-1 text-center peer-checked:bg-gray-200 dark:peer-checked:bg-gray-600 peer-checked:rounded-full peer-checked:text-gray-900 peer-checked:cursor-default text-gray-500 cursor-pointer font-medium text-lg" for="englishButton" id="englishLabel"> English </span>
 			</label>
 		</div>
 	</div> -->
@@ -68,7 +68,7 @@ let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 					pack="ph"
 					name="shuffle-angular"
 					for="colorSwitcher"
-					class="flex p-2 bg-gray-200 justify-center items-center transition peer-checked:rounded-full peer-checked:hover:scale-100 rounded-xl hover:scale-105 cursor-pointer h-12 w-12"
+					class="flex p-2 bg-gray-200 dark:bg-gray-600 justify-center items-center transition peer-checked:rounded-full peer-checked:hover:scale-100 rounded-xl hover:scale-105 cursor-pointer h-12 w-12"
 					id="random"
 				/>
 			</label>
@@ -80,7 +80,7 @@ let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 			<label>
 				<input type="radio" class="sr-only peer" value="light" name="darkModeSwitcher" id="lightModeInput" />
 				<Icon
-					class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
+					class="w-12 h-12 p-2 peer-checked:bg-gray-200 dark:peer-checked:bg-gray-600 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
 					pack="ph"
 					name="sun"
 					id="lightMode"
@@ -90,7 +90,7 @@ let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 			<label>
 				<input type="radio" class="sr-only peer" value="auto" name="darkModeSwitcher" id="autoModeInput" />
 				<Icon
-					class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
+					class="w-12 h-12 p-2 peer-checked:bg-gray-200 dark:peer-checked:bg-gray-600 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
 					pack="ph"
 					name="arrows-counter-clockwise"
 					for="darkModeSwitcher"
@@ -99,7 +99,7 @@ let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 			<label>
 				<input type="radio" class="sr-only peer" value="dark" name="darkModeSwitcher" id="darkModeInput" />
 				<Icon
-					class="w-12 h-12 p-2 peer-checked:bg-gray-200 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
+					class="w-12 h-12 p-2 peer-checked:bg-gray-200 dark:peer-checked:bg-gray-600 peer-checked:rounded-full peer-checked:cursor-default cursor-pointer"
 					pack="ph"
 					name="moon"
 					for="darkModeSwitcher"
