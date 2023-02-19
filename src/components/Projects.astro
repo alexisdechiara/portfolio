@@ -1,56 +1,10 @@
 ---
 import Project from "../components/Project.astro";
-
-const projects = [
-	{
-		url: import("../assets/images/projects/portfolio.webp"),
-		alt: "Portfolio",
-		title: "Portfolio",
-		description: "Deuxième version de mon portfolio cette fois réalisé avec Astro et Tailwind.",
-		git: "https://github.com/alexisdechiara/portfolio",
-		website: "#",
-	},
-	{
-		url: import("../assets/images/projects/roll20Alternative.webp"),
-		alt: "Roll20Alternative",
-		title: "Roll20Alternative",
-		description: "Projet réalisé en équipe de 6 durant la 2e année de DUT Informatique.",
-		git: "https://github.com/alexisdechiara/Roll20Alternative",
-		website: "#",
-	},
-	{
-		url: import("../assets/images/projects/geekly.webp"),
-		alt: "GEEKLY",
-		title: "GEEKLY",
-		description: "Projet réalisé seul à l'aide du CMS Ghost en modifiant un thème existant.",
-		git: "https://github.com/alexisdechiara/attibling",
-		website: "https://geekly.blog",
-	},
-	{
-		url: import("../assets/images/projects/concertProject.webp"),
-		alt: "ConcertProject",
-		title: "ConcertProject",
-		description: "Projet réalisé seul en licence pro APIDAE et m'ayant nécessité 35h de travail.",
-		git: "https://github.com/alexisdechiara/ConcertProject",
-		website: "#",
-	},
-	{
-		url: import("../assets/images/projects/cookandchief.webp"),
-		alt: "Cook&Chief",
-		title: "Cook&Chief",
-		description: "Projet réalisé en cours de licence pro APIDAE avec l'aide d'un designer pour les images.",
-		git: "https://github.com/alexisdechiara/cookandchief",
-		website: "https://cookandchief.netlify.app",
-	},
-	{
-		url: import("../assets/images/projects/utility-tools.webp"),
-		alt: "Utility Tools",
-		title: "Utility Tools",
-		description: "Site permettant de rassembler un ensemble de fonctionnalités pratiques.",
-		git: "https://github.com/alexisdechiara/utility-tools",
-		website: "https://alexisdechiara.github.io/utility-tools/",
-	},
-];
+const response = await fetch (`https://api.airtable.com/v0/${import.meta.env.AIRTABLE_BASE_ID}/${import.meta.env.AIRTABLE_TABLE_ID}?view=${import.meta.env.AIRTABLE_VIEW_ID}&returnFieldsByFieldId=true`, {
+	headers: {Authorization : `Bearer ${import.meta.env.AIRTABLE_TOKEN}`}
+	});
+const data = await response.json();
+const projects = data.records;
 ---
 
 <section class="pt-24 mt-24 mb-32" id="projects">
@@ -59,6 +13,13 @@ const projects = [
 		<span class="font-medium text-xl dark:text-gray-100">Voici les projets personnels que j’ai réalisés.</span>
 	</div>
 	<div class="w-full grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 ultrawide:grid-cols-5 gap-8 px-16 laptop:px-24 desktop:px-32 ultrawide:px-48">
-		{projects.map(content => <Project content={content} />)}
+		{projects.map(item => <Project content={{
+			title: item.fields.fldeYZgpm3DuAxFVZ,
+			description: item.fields.fldf1Cd0Ao6VOJBV6,
+			url: item.fields.fldEBHDhTr8I8OJCY[0].thumbnails.large.url,
+			website: item.fields.fldQQb143A7pERV3U,
+			git: item.fields.fldWo3aro8DG7f2Qy,
+			tools: item.fields.fld0omaz4z2nzQmLR
+		}}/>)}
 	</div>
 </section>
