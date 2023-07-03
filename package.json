@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "0.7.1",
+	"version": "0.8.0",
 	"type": "module",
 	"license": "MIT",
 	"private": true,
@@ -12,24 +12,27 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/image": "^0.7.1",
-		"@astrojs/netlify": "^1.0.4",
+		"@astrojs/image": "^0.17.1",
 		"@astrojs/node": "^1.1.0",
-		"@astrojs/partytown": "^1.0.2",
-		"@astrojs/sitemap": "^1.0.0",
-		"@astrojs/tailwind": "^1.0.0",
-		"@astrojs/vercel": "^2.0.1",
-		"astro": "^1.2.2",
-		"astro-compress": "^1.1.24",
-		"astro-icon": "^0.7.3",
-		"astro-imagetools": "^0.7.0",
-		"astro-seo": "^0.6.1",
-		"sharp": "^0.31.3"
+		"@astrojs/partytown": "^1.2.3",
+		"@astrojs/sitemap": "^1.3.3",
+		"@astrojs/tailwind": "^4.0.0",
+		"@astrojs/vercel": "^3.5.1",
+		"@storyblok/astro": "^2.5.0",
+		"@vitejs/plugin-basic-ssl": "^1.0.1",
+		"astro": "^2.7.2",
+		"astro-compress": "^1.1.48",
+		"astro-icon": "^0.8.1",
+		"astro-imagetools": "^0.8.1",
+		"astro-seo": "^0.7.4",
+		"sharp": "^0.32.1",
+		"tailwindcss": "^3.3.2",
+		"vite": "^4.3.9"
 	},
 	"devDependencies": {
-		"prettier": "^2.7.1",
-		"prettier-plugin-astro": "^0.5.4",
-		"prettier-plugin-tailwindcss": "^0.1.13",
-		"tailwind-scrollbar": "^2.0.1"
+		"prettier": "^2.8.8",
+		"prettier-plugin-astro": "^0.10.0",
+		"prettier-plugin-tailwindcss": "^0.3.0",
+		"tailwind-scrollbar": "^3.0.4"
 	}
 }
