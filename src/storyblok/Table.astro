@@ -1,0 +1,13 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+const { blok } = Astro.props;
+---
+
+<div class="h-fill -mt-32 flex w-10/12 flex-col rounded-xl border bg-white shadow-md dark:border-gray-800 dark:bg-gray-800 dark:text-gray-100 sm:-mt-48 tablet:-mt-72 tablet:w-2/3 tablet:flex-row laptop:w-3/4" {...storyblokEditable(blok)}>
+	{
+		blok.columns?.map((blok, index) => {
+			return <StoryblokComponent blok={blok} isLastColumn={index > 0} />;
+		})
+	}
+</div>

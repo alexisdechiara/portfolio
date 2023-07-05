@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon";
+
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+const { blok, isLastColumn } = Astro.props;
+---
+
+<div class={`flex-1 flex-col items-center justify-center px-12 py-8 ${isLastColumn || "dark:border-gray-700 tablet:border-r"}`}>
+	<div class="mb-8 flex flex-col items-center justify-center">
+		{blok.icon_pack && blok.icon_name && <Icon class="mb-8 w-24 rounded-full bg-gray-100 p-4 text-primary dark:bg-gray-700 dark:text-primary-light" pack={blok.icon_pack} name={blok.icon_name} />}
+		<h4 class="pb-2 text-center text-2xl font-bold">{blok.title}</h4>
+		<span class="text-md text-center">{blok.description}</span>
+	</div>
+	<Fragment {...storyblokEditable(blok)}>
+		{
+			blok.cells?.map((blok) => {
+				return <StoryblokComponent blok={blok} />;
+			})
+		}
+	</Fragment>
+</div>

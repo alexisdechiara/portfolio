@@ -1,0 +1,30 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+
+const { blok } = Astro.props;
+---
+
+<header {...storyblokEditable(blok)}>
+    {
+        blok.Header?.map((header) => {
+            return <StoryblokComponent blok={header} />;
+        })
+    }
+</header>
+
+<main {...storyblokEditable(blok)}>
+    {
+        blok.Main?.map((main) => {
+            return <StoryblokComponent blok={main} />;
+        })
+    }
+</main>
+
+<footer {...storyblokEditable(blok)}>
+    {
+        blok.Footer?.map((footer) => {
+            return <StoryblokComponent blok={footer} />;
+        })
+    }
+</footer>
