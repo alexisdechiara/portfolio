@@ -1,0 +1,23 @@
+---
+const { blok } = Astro.props;
+---
+
+<form class="flex max-w-lg flex-col items-center space-y-4 px-16 tablet:w-3/4 laptop:w-1/2 desktop:max-w-3xl" action={blok.action.url} method="POST" enctype="multipart/form-data" id="form">
+	<div class="flex w-full flex-col items-center justify-center space-y-4 tablet:flex-row tablet:space-x-6 tablet:space-y-0">
+		<div class="flex min-w-0 flex-1 flex-col">
+			<label class="pb-1 font-medium capitalize text-white laptop:text-lg ultrawide:text-xl" for="name">{blok.name}</label>
+			<input id="name" name="name" class="rounded-xl bg-white px-4 text-black laptop:py-1" type="text" />
+		</div>
+		<div class="flex min-w-0 flex-1 flex-col">
+			<label class="pb-1 font-medium capitalize text-white laptop:text-lg ultrawide:text-xl" for="mail">{blok.mail}</label>
+			<input id="mail" name="email" class="rounded-xl bg-white px-4 text-black laptop:py-1" type="email" />
+		</div>
+	</div>
+	<div class="flex w-full min-w-max flex-col">
+		<label class="pb-1 font-medium capitalize text-white laptop:text-lg ultrawide:text-xl" for="message">{blok.message}</label>
+		<textarea id="message" name="message" class="h-32 rounded-xl bg-white px-4 py-1 leading-5 text-black"></textarea>
+	</div>
+	<div class="flex w-full justify-end">
+		<button type="submit" class="inline w-full rounded-xl border-2 border-primary-light px-3 py-1 uppercase text-primary-light transition duration-150 ease-in-out hover:bg-primary-light hover:text-slate-900 tablet:w-fit">{blok.submit}</button>
+	</div>
+</form>

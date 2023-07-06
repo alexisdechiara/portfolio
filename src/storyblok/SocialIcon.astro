@@ -1,0 +1,9 @@
+---
+import { Icon } from "astro-icon";
+const { blok } = Astro.props;
+---
+
+<a href={blok.link.url} class="flex flex-col items-center justify-center space-y-2 transition duration-150 ease-in-out hover:scale-110">
+	<Icon class="h-8 w-8 tablet:h-12 tablet:w-12 ultrawide:h-16 ultrawide:w-16" pack={blok.icon[0].pack} name={blok.icon[0].name} />
+	{blok.text && <span class="text-md tablet:text-xl ultrawide:text-2xl">{blok.text}</span>}
+</a>

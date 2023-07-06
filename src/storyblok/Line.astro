@@ -1,0 +1,28 @@
+---
+const { blok } = Astro.props;
+---
+
+<div class={`flex h-[300px] items-center justify-between ${blok.position === "left" ? "tablet:justify-start" : "tablet:justify-end"}`}>
+	<span class="-translate-x-4 rounded-full border-[16px] border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary tablet:hidden"></span>
+	<span class={`text-4xl font-bold text-primary-dark dark:text-primary ${blok.position === "left" && "tablet:hidden"}`}>{blok.year}</span>
+	{blok.position === "right" && <span class="mr-8 hidden translate-x-12 rounded-full border-[16px] border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary tablet:flex" />}
+	<div class={`flex grow justify-end tablet:w-1/2 tablet:grow-0 ${blok.position === "left" && "tablet:justify-start"} ultrawide:justify-center`}>
+		<div class="flex w-11/12 min-w-[200px] flex-col border-[3px] border-primary-dark p-4 transition duration-75 ease-in-out hover:bg-primary-dark hover:text-white dark:border-primary dark:hover:bg-primary tablet:w-3/4 laptop:w-4/5 laptop:p-8 desktop:p-11 ultrawide:w-[500px]">
+			<h4 class="text-md font-bold dark:text-gray-100 tablet:text-lg laptop:text-xl desktop:text-2xl">{blok.title}</h4>
+			<span class="tablet:text-md text-sm font-light dark:text-gray-100 desktop:text-lg"> {blok.location}</span>
+			<p class="laptop:text-md grow pb-4 text-justify text-xs font-medium dark:text-gray-100 tablet:pt-2 tablet:text-sm">{blok.description}</p>
+			<div class="flex justify-end space-x-2">
+				<a href={blok.website} target="_blank" class="bg-primary p-2 capitalize text-white transition duration-75 ease-in-out hover:bg-primary-light dark:bg-primary-light"> site web</a>
+				<a href={blok.map} target="_blank" class="bg-primary p-2 capitalize text-white transition duration-75 ease-in-out hover:bg-primary-light dark:bg-primary-light"> carte</a>
+			</div>
+		</div>
+	</div>
+	{
+		blok.position === "left" && (
+			<>
+				<span class="mr-8 hidden -translate-x-4 rounded-full border-[16px] border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary tablet:flex" />
+				<span class="hidden text-4xl font-bold text-primary-dark dark:text-primary tablet:flex">{blok.year}</span>
+			</>
+		)
+	}
+</div>

@@ -1,11 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
-import Presentation from "../components/Presentation.astro";
-import Skills from "../components/Skills.astro";
-import Career from "../components/Career.astro";
-import Projects from "../components/Projects.astro";
-import Contact from "../components/Contact.astro";
 import "../assets/styles/base.css";
 
 import { useStoryblokApi } from "@storyblok/astro";
@@ -20,18 +14,4 @@ const story = data.story;
 
 <Layout>
 	<StoryblokComponent blok={story.content} />
-	<!-- <header>
-		<Navigation />
-	</header>
-
-	<main>
-		<Presentation />
-		<Skills />
-		<Career />
-		<Projects />
-	</main>
-
-	<footer>
-		<Contact />
-	</footer> -->
 </Layout>

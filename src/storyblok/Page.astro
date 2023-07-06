@@ -7,7 +7,7 @@ const { blok } = Astro.props;
 
 <header {...storyblokEditable(blok)}>
     {
-        blok.Header?.map((header) => {
+        blok.header?.map((header) => {
             return <StoryblokComponent blok={header} />;
         })
     }
@@ -15,15 +15,15 @@ const { blok } = Astro.props;
 
 <main {...storyblokEditable(blok)}>
     {
-        blok.Main?.map((main) => {
+        blok.main?.map((main) => {
             return <StoryblokComponent blok={main} />;
         })
     }
 </main>
 
-<footer {...storyblokEditable(blok)}>
+<footer class="relative" {...storyblokEditable(blok)}>
     {
-        blok.Footer?.map((footer) => {
+        blok.footer?.map((footer) => {
             return <StoryblokComponent blok={footer} />;
         })
     }

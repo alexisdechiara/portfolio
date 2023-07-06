@@ -4,7 +4,7 @@ import { SEO } from "astro-seo";
 ---
 
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 scrollbar-thumb hover:scrollbar-thumb-gray-500 scrollbar-track-transparent scrollbar-thumb-rounded-full">
+<html lang="fr" class="scrollbar-thumb scroll-smooth scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 scrollbar-thumb-rounded-full hover:scrollbar-thumb-gray-500">
   <head>
     <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
 
@@ -24,28 +24,28 @@ import { SEO } from "astro-seo";
         ],
         // extending the default meta tags
         meta: [
-          { name: "viewport", content: "width=device-width", },
+          { name: "viewport", content: "width=device-width" },
           { name: "keywords", content: "portfolio, Astro, tailwind, Alexis De Chiara" },
           { name: "author", content: "Alexis De Chiara" },
-          { name: "generator", content: Astro.generator},
+          { name: "generator", content: Astro.generator },
         ],
       }}
     />
 
-    <meta property="og:url" content="https://alexisdechiara.geekly.blog">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Alexis De Chiara - Portfolio">
-    <meta property="og:description" content="Développeur Front-end & UX/UI designer">
-    <meta property="og:image" content="/portfolio.webp">
+    <meta property="og:url" content="https://alexisdechiara.geekly.blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alexis De Chiara - Portfolio" />
+    <meta property="og:description" content="Développeur Front-end & UX/UI designer" />
+    <meta property="og:image" content="/portfolio.webp" />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="alexisdechiara.geekly.blog">
-    <meta property="twitter:url" content="https://alexisdechiara.geekly.blog">
-    <meta name="twitter:title" content="Alexis De Chiara - Portfolio">
-    <meta name="twitter:description" content="Développeur Front-end & UX/UI designer">
-    <meta name="twitter:image" content="/portfolio.webp">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="alexisdechiara.geekly.blog" />
+    <meta property="twitter:url" content="https://alexisdechiara.geekly.blog" />
+    <meta name="twitter:title" content="Alexis De Chiara - Portfolio" />
+    <meta name="twitter:description" content="Développeur Front-end & UX/UI designer" />
+    <meta name="twitter:image" content="/portfolio.webp" />
   </head>
-  <body class="bg-white dark:bg-gray-900">
+  <body class="overflow-x-hidden bg-white dark:bg-gray-900">
     <Script />
     <slot />
   </body>
