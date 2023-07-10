@@ -7,7 +7,7 @@ const { blok } = Astro.props;
 
 <article class:list={[blok.direction === "left" ? "translate-x-16" : "-translate-x-16 flex-row-reverse", "flex w-10/12 my-24"]}>
 	<a href={blok.website.url} aria-label="alt" rel="external">
-		<Image src={blok.image.filename} alt={blok.image.alt} width={1280} aspectRatio={16 / 9} class="rounded-xl bg-white transition duration-300 ease-out hover:scale-105 hover:shadow-md dark:bg-gray-300" />
+		<Image src={blok.image.filename} alt={blok.image.alt} width={1280} aspectRatio={16 / 9} class="rounded-xl bg-white transition duration-300 ease-out hover:scale-105 hover:shadow-md dark:bg-gray-100" />
 	</a>
 	<div class:list={[blok.direction === "left" ? "-translate-x-32" : "translate-x-32", "flex w-full flex-col px-4 py-4"]}>
 		<h5 class:list={[blok.direction === "left" ? "text-right" : "text-left", "pb-1 text-lg font-normal text-white"]}>{blok.type} • {blok.year}</h5>

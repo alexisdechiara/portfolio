@@ -44,6 +44,9 @@ export default defineConfig({
 			simpleFooter: "storyblok/SimpleFooter",
 			servicesContainer: "storyblok/ServicesContainer",
 			service: "storyblok/Service",
+			item: "storyblok/Item",
+			projectsContainer: "storyblok/ProjectsContainer",
+			project: "storyblok/Project",
 		},
     }), partytown(), sitemap(), compress()],
 	vite: {

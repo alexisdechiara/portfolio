@@ -1,0 +1,39 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import { Icon } from "astro-icon";
+const { blok } = Astro.props;
+---
+
+<section>
+    <div class="m-8 flex h-16 items-center justify-between">
+        <nav class="flex items-center space-x-2">
+            <a href="/" class="inline-flex text-2xl font-bold text-gray-900 hover:text-primary dark:text-gray-100">
+                <Icon class="mr-2 h-8 w-8" pack="ph" name="caret-left-bold" />
+                Retour
+            </a>
+        </nav>
+        <div class="flex h-min grow items-center justify-end space-x-8">
+            <div class="flex space-x-2">
+                <div>
+                    <input type="radio" id="default" name="sorting" value="default" class="peer hidden" checked />
+                    <label for="default" class="cursor-pointer rounded-md border border-primary px-4 py-2 peer-checked:bg-primary peer-checked:text-white hover:bg-primary hover:text-white peer-checked:dark:text-gray-100 hover:dark:text-gray-100"> Défaut</label>
+                </div>
+                <div>
+                    <input type="radio" id="personnal" name="sorting" value="personnal" class="peer hidden" />
+                    <label for="personnal" class="cursor-pointer rounded-md border border-primary px-4 py-2 peer-checked:bg-primary peer-checked:text-white hover:bg-primary hover:text-white peer-checked:dark:text-gray-100 hover:dark:text-gray-100"> Personnel</label>
+                </div>
+            </div>
+            <div class="h-10">
+                <input type="text" name="search" class="peer h-full rounded-full border-2 px-4 focus:border-primary focus:outline-none" placeholder="Rechercher" />
+            </div>
+        </div>
+    </div>
+    <div class="grid w-full grid-cols-1 gap-8 px-16 tablet:grid-cols-2 laptop:grid-cols-3 laptop:px-24 desktop:px-32 ultrawide:grid-cols-5 ultrawide:px-48" {...storyblokEditable(blok)}>
+        {
+            blok.projects?.map((content) => {
+                return <StoryblokComponent blok={content} />;
+            })
+        }
+    </div>
+</section>

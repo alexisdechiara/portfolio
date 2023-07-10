@@ -21,8 +21,10 @@ module.exports = {
 	safelist: [
 		{
 			pattern: /bg-(sky|indigo|purple|red|pink|orange|green)-(500|600)/,
-			pattern : /mb-(2|4|8|16|32|48|64|96)/,
 		},
+		{
+			pattern: /mb-(2|4|8|16|32|48|64|96)/,
+		}
 	],
 	plugins: [require("prettier-plugin-tailwindcss"), require("tailwind-scrollbar")({ nocompatible: true })],
 };

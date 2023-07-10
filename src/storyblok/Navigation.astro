@@ -1,29 +1,29 @@
 ---
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import { Icon } from "astro-icon";
-
 let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
+const { blok } = Astro.props;
 ---
 
-<nav class="fixed inset-x-0 top-0 z-40 flex bg-white px-8 py-4 dark:bg-gray-900 tablet:items-center tablet:justify-center" id="navbar">
+<nav class:list={[blok.hidden && "hidden", "fixed inset-x-0 top-0 z-40 flex flex-row-reverse bg-white px-8 py-4 dark:bg-gray-900 tablet:items-center tablet:justify-between"]} id="navbar">
 	<div class="tablet:hidden" id="mobile-nav">
 		<Icon class="h-6 w-6 cursor-pointer tablet:hidden" pack="ph" name="list-bold" id="burger-icon" />
 		<Icon class="hidden h-6 w-6 cursor-pointer" pack="ph" name="x-bold" id="close-icon" />
 	</div>
 	<div class="flex grow tablet:hidden"></div>
-	<ul class="hidden h-screen w-full grow flex-col items-center justify-evenly space-y-8 text-center text-2xl font-medium text-gray-500 tablet:flex tablet:h-full tablet:flex-row tablet:justify-center tablet:space-x-8 tablet:space-y-0 tablet:text-xl laptop:text-2xl ultrawide:text-3xl" id="links-list">
-		<li id="presentation-link" class="font-bold capitalize text-black transition duration-300 ease-in-out hover:text-black dark:text-white dark:hover:text-gray-50">
-			<a href="#presentation"> présentation</a>
-		</li>
-		<li id="skills-link" class="capitalize transition duration-300 ease-in-out hover:text-black dark:hover:text-gray-100"><a href="#skills" rel="tag"> compétences</a></li>
-		<li id="career-link" class="capitalize transition duration-300 ease-in-out hover:text-black dark:hover:text-gray-100"><a href="#career" rel="tag"> carrière</a></li>
-		<li id="projects-link" class="capitalize transition duration-300 ease-in-out hover:text-black dark:hover:text-gray-100"><a href="#projects" rel="tag"> projets</a></li>
-		<li id="contact-link" class="capitalize transition duration-300 ease-in-out hover:text-black dark:hover:text-gray-100"><a href="#contact" rel="tag"> contact</a></li>
+	<ul class="hidden h-screen flex-col items-center justify-end space-y-8 text-center text-lg font-medium text-gray-700 dark:text-white tablet:flex tablet:h-full tablet:flex-row tablet:justify-center tablet:space-x-8 tablet:space-y-0" id="links-list" {...storyblokEditable(blok)}>
+		{
+			blok.items?.map((blok) => {
+				return <StoryblokComponent blok={blok} />;
+			})
+		}
 	</ul>
 	<Icon class="flex h-6 w-6 cursor-pointer transition-transform duration-300 ease-in hover:rotate-180 active:rotate-180 dark:text-gray-100" pack="ph" name="gear-six-fill" id="gearTrigger" />
 </nav>
 
 <div class="invisible fixed z-40 h-screen w-screen bg-black/10 opacity-0 transition-all duration-100 ease-in dark:bg-black/25" id="modalOverlay"></div>
-<div class="invisible fixed right-10 top-16 z-50 flex w-64 flex-col space-y-4 rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-md transition-all duration-100 ease-in dark:border-gray-900 dark:bg-gray-800 dark:text-white" id="modalContainer">
+<div class="invisible fixed left-10 top-16 z-50 flex w-64 flex-col space-y-4 rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-md transition-all duration-100 ease-in dark:border-gray-900 dark:bg-gray-800 dark:text-white" id="modalContainer">
 	<!-- Language is disabled as long as astro-i18next is in beta -->
 	<!-- <div class="flex flex-col">
 		<span class="pb-2 block text-lg font-bold capitalize"> langue </span>

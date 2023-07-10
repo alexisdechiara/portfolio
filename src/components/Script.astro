@@ -1,206 +1,173 @@
 ---
 ---
+
 <script>
-import colors from 'tailwindcss/colors'
-const modals = document.querySelectorAll("#modalOverlay, #modalContainer");
-const modalTriggers = document.querySelectorAll("#modalOverlay, #gearTrigger");
-const colorSwitchers = <NodeListOf<HTMLInputElement>>document.getElementsByName("colorSwitcher");
-const languageButtons = <NodeListOf<HTMLInputElement>>document.querySelectorAll("#frenchButton, #englishButton");
-const gearTrigger = <HTMLElement>document.getElementById("gearTrigger");
-const darkModeSwitchers = <NodeListOf<HTMLInputElement>>document.getElementsByName("darkModeSwitcher");
-const sections = <NodeListOf<HTMLElement>>document.querySelectorAll("#presentation, #skills, #career, #projects, #contact");
-const links = document.querySelectorAll("#presentation-link, #skills-link, #career-link, #projects-link, #contact-link");
-const navbar = <HTMLElement>document.getElementById("navbar");
-const linksList = <HTMLElement>document.getElementById("links-list");
-const mobileNav = <HTMLElement>document.getElementById("mobile-nav");
-const burger = <HTMLElement>document.getElementById("burger-icon");
-const close = <HTMLElement>document.getElementById("close-icon");
+	import colors from "tailwindcss/colors";
+	const modals = document.querySelectorAll("#modalOverlay, #modalContainer");
+	const modalTriggers = document.querySelectorAll("#modalOverlay, #gearTrigger");
+	const colorSwitchers = document.getElementsByName("colorSwitcher") as NodeListOf<HTMLInputElement>;
+	const languageButtons = document.querySelectorAll("#frenchButton, #englishButton") as NodeListOf<HTMLInputElement>;
+	const gearTrigger = document.getElementById("gearTrigger") as HTMLElement;
+	const darkModeSwitchers = document.getElementsByName("darkModeSwitcher") as NodeListOf<HTMLInputElement>;
+	const links = document.querySelectorAll("#presentation-link, #skills-link, #career-link, #projects-link, #contact-link");
+	const navbar = document.getElementById("navbar") as HTMLElement;
+	const linksList = document.getElementById("links-list") as HTMLElement;
+	const mobileNav = document.getElementById("mobile-nav") as HTMLElement;
+	const burger = document.getElementById("burger-icon") as HTMLElement;
+	const close = document.getElementById("close-icon") as HTMLElement;
 
-mobileNav.addEventListener("click", function(){
-	linksList.classList.toggle("hidden");
-	burger.classList.toggle("hidden");
-	close.classList.toggle("hidden");
-	linksList.classList.toggle("flex");
-	gearTrigger.classList.toggle("hidden");
-});
+	mobileNav.addEventListener("click", function () {
+		linksList.classList.toggle("hidden");
+		burger.classList.toggle("hidden");
+		close.classList.toggle("hidden");
+		linksList.classList.toggle("flex");
+		gearTrigger.classList.toggle("hidden");
+	});
 
-addEventListener('resize', function() {
-	gearTrigger.classList.remove("hidden");
-});
+	addEventListener("resize", function () {
+		gearTrigger.classList.remove("hidden");
+	});
 
-links.forEach(link => link.addEventListener("click", function () {
-	linksList.classList.add("hidden");
-	linksList.classList.remove("flex");
-	burger.classList.remove("hidden");
-	close.classList.add("hidden");
-	gearTrigger.classList.remove("hidden");
-}));
+	links.forEach((link) =>
+		link.addEventListener("click", function () {
+			linksList.classList.add("hidden");
+			linksList.classList.remove("flex");
+			burger.classList.remove("hidden");
+			close.classList.add("hidden");
+			gearTrigger.classList.remove("hidden");
+		})
+	);
 
-darkModeSwitchers.forEach(btn => btn.addEventListener("click", function() {
-	switchMode(btn.value);
-}));
+	darkModeSwitchers.forEach((btn) =>
+		btn.addEventListener("click", function () {
+			switchMode(btn.value);
+		})
+	);
 
-if(!('theme' in localStorage)) {
-	localStorage.theme = "auto";
-}
-
-checkDarkmode();
-
-function checkDarkmode() {
-	darkModeSwitchers.forEach(btn => btn.checked = btn.value == localStorage.theme);
-	switchMode(localStorage.theme);
-}
-
-function switchMode(mode:string) {
-	localStorage.theme = mode;
-	if (localStorage.theme == "dark" || (localStorage.theme == "auto" && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-		document.documentElement.classList.add('dark');
-	} else {
-		document.documentElement.classList.remove('dark');
+	if (!("theme" in localStorage)) {
+		localStorage.theme = "auto";
 	}
-}
 
-window.addEventListener('scroll', checkScroll);
+	checkDarkmode();
 
-function checkScroll () {
-	sections.forEach(section => {
-		if (section.getBoundingClientRect().top <= 96 ) {
-			links.forEach(link => {
-				link.classList.remove("text-gray-100", "hover:text-gray-100");
-				gearTrigger.classList.remove("text-gray-100");
-				mobileNav.classList.remove("text-gray-100");
-					if(link.id == section.id + "-link") {
-						if (section.id == "contact") {
-							navbar.classList.add("bg-slate-900");
-							navbar.classList.remove("bg-white");
-							link.classList.add("text-gray-100", "hover:text-gray-100");
-							gearTrigger.classList.add("text-gray-100");
-							mobileNav.classList.add("text-gray-100");
-						}
-						link.classList.add("text-black", "dark:text-white", "font-bold");
-					} else {
-						if (section.id == "contact") {
-							link.classList.add("text-gray-500", "hover:text-gray-100");
-						}
-						link.classList.add("hover:text-black");
-						link.classList.remove("text-gray-500", "text-black", "dark:text-white", "font-bold");
-						navbar.classList.add("bg-white");
-						navbar.classList.remove("bg-slate-900");
-					}
-				})
+	function checkDarkmode() {
+		darkModeSwitchers.forEach((btn) => (btn.checked = btn.value == localStorage.theme));
+		switchMode(localStorage.theme);
+	}
+
+	function switchMode(mode: string) {
+		localStorage.theme = mode;
+		if (localStorage.theme == "dark" || (localStorage.theme == "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+			document.documentElement.classList.add("dark");
 		} else {
-			links.forEach(link => {
-					if(link.id == section.id + "-link"){
-						link.classList.remove("text-black");
-						link.classList.remove("font-bold");
-					}
-				})
+			document.documentElement.classList.remove("dark");
+		}
+	}
+
+	let stockColor: string;
+	if (!localStorage.color) {
+		localStorage.color = "random";
+	}
+	stockColor = localStorage.color;
+	changeColor(stockColor);
+	checkCurrentColor(stockColor);
+
+	function getRandomColor(): string {
+		let randomColor = ["sky", "indigo", "purple", "red", "pink", "orange", "green"];
+		let randomIndex = Math.floor(Math.random() * randomColor.length);
+		return randomColor[randomIndex];
+	}
+
+	function checkCurrentColor(color: string) {
+		colorSwitchers.forEach((btn) => (btn.checked = btn.value == color));
+	}
+
+	colorSwitchers.forEach((btn) =>
+		btn.addEventListener("click", function () {
+			changeColor(btn.value);
+		})
+	);
+
+	languageButtons.forEach((btn) => btn.addEventListener("click", switchLanguage));
+	languageButtons.forEach((btn) => {
+		if (btn.value === window.location.pathname) {
+			btn.checked = true;
+			btn.disabled = true;
 		}
 	});
-}
 
-let stockColor:string;
-if (!localStorage.color) {
-	localStorage.color = "random"
-}
-stockColor = localStorage.color;
-changeColor(stockColor);
-checkCurrentColor(stockColor);
-
-function getRandomColor (): string {
-	let randomColor = ['sky','indigo','purple','red','pink','orange','green'];
-	let randomIndex = Math.floor(Math.random() * randomColor.length); 
-	return randomColor[randomIndex];
-}
-
-function checkCurrentColor(color:string){
-	colorSwitchers.forEach(btn => btn.checked = btn.value == color);
-}
-
-colorSwitchers.forEach(btn => btn.addEventListener("click", function() {
-	changeColor(btn.value);
-}));
-
-languageButtons.forEach(btn => btn.addEventListener("click", switchLanguage));
-languageButtons.forEach(btn => {
-	if(btn.value === window.location.pathname) {
-		btn.checked = true;
-		btn.disabled = true;
+	function switchLanguage() {
+		languageButtons.forEach((btn) => {
+			if (btn.checked) {
+				window.location.pathname = btn.value;
+			}
+		});
 	}
-});
 
-function switchLanguage() {
-	languageButtons.forEach(btn => {
-		if(btn.checked) {
-			window.location.pathname = btn.value;
+	modalTriggers.forEach((trigger) => trigger.addEventListener("click", toggleModal));
+
+	function toggleModal() {
+		modals.forEach((modal) => modal.classList.toggle("opacity-0"));
+		modals.forEach((modal) => modal.classList.toggle("invisible"));
+		gearTrigger?.classList.toggle("rotate-180");
+	}
+
+	function changeColor(color: string) {
+		localStorage.color = color;
+		let stockColor: string;
+		if (localStorage.color == "random") stockColor = getRandomColor();
+		else stockColor = localStorage.color;
+		switch (stockColor) {
+			case "sky":
+				document.documentElement.style.setProperty("--color-primary", colors.sky[500]);
+				document.documentElement.style.setProperty("--color-primary-dark", colors.sky[600]);
+				document.documentElement.style.setProperty("--color-primary-light", colors.sky[400]);
+				break;
+			case "indigo":
+				document.documentElement.style.setProperty("--color-primary", colors.indigo[500]);
+				document.documentElement.style.setProperty("--color-primary-dark", colors.indigo[600]);
+				document.documentElement.style.setProperty("--color-primary-light", colors.indigo[400]);
+				break;
+			case "purple":
+				document.documentElement.style.setProperty("--color-primary", colors.purple[500]);
+				document.documentElement.style.setProperty("--color-primary-dark", colors.purple[600]);
+				document.documentElement.style.setProperty("--color-primary-light", colors.purple[400]);
+				break;
+			case "red":
+				document.documentElement.style.setProperty("--color-primary", colors.red[500]);
+				document.documentElement.style.setProperty("--color-primary-dark", colors.red[600]);
+				document.documentElement.style.setProperty("--color-primary-light", colors.red[400]);
+				break;
+			case "pink":
+				document.documentElement.style.setProperty("--color-primary", colors.pink[500]);
+				document.documentElement.style.setProperty("--color-primary-dark", colors.pink[600]);
+				document.documentElement.style.setProperty("--color-primary-light", colors.pink[400]);
+				break;
+			case "orange":
+				document.documentElement.style.setProperty("--color-primary", colors.orange[500]);
+				document.documentElement.style.setProperty("--color-primary-dark", colors.orange[600]);
+				document.documentElement.style.setProperty("--color-primary-light", colors.orange[400]);
+				break;
+			case "green":
+				document.documentElement.style.setProperty("--color-primary", colors.green[500]);
+				document.documentElement.style.setProperty("--color-primary-dark", colors.green[600]);
+				document.documentElement.style.setProperty("--color-primary-light", colors.green[400]);
+				break;
+			default:
+				break;
 		}
-	})
-}
-
-modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal));
-
-function toggleModal() {
-	modals.forEach(modal => modal.classList.toggle("opacity-0"));
-	modals.forEach(modal => modal.classList.toggle("invisible"));
-	gearTrigger?.classList.toggle("rotate-180");
-}
-
-function changeColor(color:string) {
-	localStorage.color = color;
-	let stockColor:string;
-	if(localStorage.color == "random") stockColor = getRandomColor();
-	else stockColor = localStorage.color;
-	switch(stockColor) {
-		case 'sky':
-			document.documentElement.style.setProperty('--color-primary', colors.sky[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.sky[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.sky[400]);
-			break;
-		case 'indigo':
-			document.documentElement.style.setProperty('--color-primary', colors.indigo[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.indigo[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.indigo[400]);
-			break;
-		case 'purple':
-			document.documentElement.style.setProperty('--color-primary', colors.purple[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.purple[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.purple[400]);
-			break;
-		case 'red':
-			document.documentElement.style.setProperty('--color-primary', colors.red[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.red[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.red[400]);
-			break;
-		case 'pink':
-			document.documentElement.style.setProperty('--color-primary', colors.pink[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.pink[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.pink[400]);
-			break;
-		case 'orange':
-			document.documentElement.style.setProperty('--color-primary', colors.orange[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.orange[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.orange[400]);
-			break;
-		case 'green':
-			document.documentElement.style.setProperty('--color-primary', colors.green[500]);
-			document.documentElement.style.setProperty('--color-primary-dark', colors.green[600]);
-			document.documentElement.style.setProperty('--color-primary-light', colors.green[400]);
-			break;
-		default:
-			break;
 	}
-}
 </script>
 
-<script type="text/javascript" >
-  function configureAhoy() {
-    ahoy.configure({
-      visitsUrl: "https://usebasin.com/ahoy/visits",
-      eventsUrl: "https://usebasin.com/ahoy/events",
-      page: "c50701398f2f" /* Use your form id here */
-    });
-    ahoy.trackView();
-    ahoy.trackSubmits();
-  }
+<script type="text/javascript">
+function configureAhoy() {
+	ahoy.configure({
+		visitsUrl: "https://usebasin.com/ahoy/visits",
+		eventsUrl: "https://usebasin.com/ahoy/events",
+		page: "c50701398f2f" /* Use your form id here */,
+	});
+	ahoy.trackView();
+	ahoy.trackSubmits();
+}
 </script>
-<script type="text/partytown" src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.9/dist/ahoy.min.js" async defer onload="configureAhoy()">
+<script type="text/partytown" src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.9/dist/ahoy.min.js" async defer onload="configureAhoy()"></script>
