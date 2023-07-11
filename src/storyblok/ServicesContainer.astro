@@ -4,7 +4,7 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const { blok } = Astro.props;
 ---
 
-<div class="flex h-min w-screen items-center justify-evenly laptop:max-w-3xl desktop:max-w-5xl ultrawide:max-w-7xl" {...storyblokEditable(blok)}>
+<div class="flex h-min w-full flex-col items-center justify-evenly space-y-8 tablet:flex-row tablet:justify-evenly tablet:space-y-0 ultrawide:max-w-7xl" {...storyblokEditable(blok)}>
     {
         blok.services?.map((blok) => {
             return <StoryblokComponent blok={blok} />;

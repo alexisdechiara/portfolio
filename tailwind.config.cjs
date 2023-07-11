@@ -16,6 +16,9 @@ module.exports = {
 				desktop: "1280px",
 				ultrawide: "1440px",
 			},
+			animation: {
+				'bounce-slow': 'bounce 3s infinite',
+			}
 		},
 	},
 	safelist: [

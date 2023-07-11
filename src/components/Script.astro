@@ -9,34 +9,10 @@
 	const languageButtons = document.querySelectorAll("#frenchButton, #englishButton") as NodeListOf<HTMLInputElement>;
 	const gearTrigger = document.getElementById("gearTrigger") as HTMLElement;
 	const darkModeSwitchers = document.getElementsByName("darkModeSwitcher") as NodeListOf<HTMLInputElement>;
-	const links = document.querySelectorAll("#presentation-link, #skills-link, #career-link, #projects-link, #contact-link");
-	const navbar = document.getElementById("navbar") as HTMLElement;
-	const linksList = document.getElementById("links-list") as HTMLElement;
-	const mobileNav = document.getElementById("mobile-nav") as HTMLElement;
-	const burger = document.getElementById("burger-icon") as HTMLElement;
-	const close = document.getElementById("close-icon") as HTMLElement;
-
-	mobileNav.addEventListener("click", function () {
-		linksList.classList.toggle("hidden");
-		burger.classList.toggle("hidden");
-		close.classList.toggle("hidden");
-		linksList.classList.toggle("flex");
-		gearTrigger.classList.toggle("hidden");
-	});
 
 	addEventListener("resize", function () {
 		gearTrigger.classList.remove("hidden");
 	});
-
-	links.forEach((link) =>
-		link.addEventListener("click", function () {
-			linksList.classList.add("hidden");
-			linksList.classList.remove("flex");
-			burger.classList.remove("hidden");
-			close.classList.add("hidden");
-			gearTrigger.classList.remove("hidden");
-		})
-	);
 
 	darkModeSwitchers.forEach((btn) =>
 		btn.addEventListener("click", function () {

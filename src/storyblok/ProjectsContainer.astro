@@ -13,19 +13,21 @@ const { blok } = Astro.props;
                 Retour
             </a>
         </nav>
-        <div class="flex h-min grow items-center justify-end space-x-8">
+        <div class="flex h-min grow items-center justify-end space-x-6">
             <div class="flex space-x-2">
-                <div>
-                    <input type="radio" id="default" name="sorting" value="default" class="peer hidden" checked />
-                    <label for="default" class="cursor-pointer rounded-md border border-primary px-4 py-2 peer-checked:bg-primary peer-checked:text-white hover:bg-primary hover:text-white peer-checked:dark:text-gray-100 hover:dark:text-gray-100"> Défaut</label>
-                </div>
-                <div>
-                    <input type="radio" id="personnal" name="sorting" value="personnal" class="peer hidden" />
-                    <label for="personnal" class="cursor-pointer rounded-md border border-primary px-4 py-2 peer-checked:bg-primary peer-checked:text-white hover:bg-primary hover:text-white peer-checked:dark:text-gray-100 hover:dark:text-gray-100"> Personnel</label>
-                </div>
+                {
+                    blok.filters?.map((filter) => (
+                        <div>
+                            <input type="radio" id={filter.replaceAll(/ /g, "-")} name="filterer" value={filter} class="peer hidden" checked={filter.toLowerCase() === "default"} />
+                            <label for={filter.replaceAll(/ /g, "-")} class="peer-disabled:hover:text-curren cursor-pointer rounded-full border-2 border-primary px-4 py-2 peer-checked:bg-primary peer-checked:text-white peer-disabled:cursor-default peer-disabled:border-gray-200 peer-disabled:peer-checked:bg-gray-200 peer-disabled:peer-checked:text-current hover:bg-primary hover:text-white peer-disabled:hover:bg-transparent peer-disabled:peer-checked:hover:bg-gray-200 dark:text-gray-100 peer-checked:dark:text-gray-100 hover:dark:text-gray-100">
+                                {filter}
+                            </label>
+                        </div>
+                    ))
+                }
             </div>
             <div class="h-10">
-                <input type="text" name="search" class="peer h-full rounded-full border-2 px-4 focus:border-primary focus:outline-none" placeholder="Rechercher" />
+                <input type="text" name="search" class="peer h-full rounded-full border-2 border-gray-300 bg-transparent px-4 transition-colors placeholder:text-gray-400 focus:border-primary focus:outline-none dark:border-gray-700" id="searchInput" placeholder="Rechercher" />
             </div>
         </div>
     </div>
@@ -37,3 +39,45 @@ const { blok } = Astro.props;
         }
     </div>
 </section>
+
+<script define:vars={{ blok }}>
+let projects = blok.projects;
+const input = document.getElementById("searchInput");
+input.addEventListener("input", searchProject);
+const filterButtons = document.getElementsByName("filterer");
+filterButtons.forEach((btn) =>
+    btn.addEventListener("change", () => {
+        let filter = "";
+        if (btn.checked) {
+            if (btn.value.toLowerCase() === "default") {
+                filter = "";
+            } else {
+                filter = btn.value.toLowerCase();
+            }
+        }
+
+        projects.forEach((project) => {
+            if (filter === "" || filter === project.type.toLowerCase()) {
+                document.getElementById(project.title).classList.remove("hidden");
+            } else {
+                document.getElementById(project.title).classList.add("hidden");
+            }
+        });
+    })
+);
+
+function searchProject(e) {
+    search = e.target.value;
+    projects.forEach((project) => {
+        if (isContaining(search, project)) {
+            document.getElementById(project.title).classList.remove("hidden");
+        } else {
+            document.getElementById(project.title).classList.add("hidden");
+        }
+    });
+}
+
+function isContaining(value, project) {
+    return project.title.toLowerCase().indexOf(value.toLowerCase()) !== -1 || project.description.toLowerCase().indexOf(value.toLowerCase()) !== -1 || project.year.indexOf(value) !== -1 || project.languages.join(" ").toLowerCase().indexOf(value.toLowerCase()) !== -1 || project.type.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+}
+</script>

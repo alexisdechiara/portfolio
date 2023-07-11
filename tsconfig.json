@@ -1,11 +1,14 @@
 {
-    "extends": "astro/tsconfigs/base",
-    "compilerOptions": {
-        "types": ["@astrojs/image/client"], 
-        "plugins": [
-            {
-                "name": "@astrojs/ts-plugin"
-            }
-        ]
-    }
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "types": [
+      "@astrojs/image/client"
+    ],
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
+    "jsx": "preserve"
+  }
 }

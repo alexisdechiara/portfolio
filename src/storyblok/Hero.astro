@@ -5,20 +5,18 @@ import { Icon } from "astro-icon";
 const { blok } = Astro.props;
 ---
 
-<section class="flex h-screen w-screen flex-col" id={blok.tag} {...storyblokEditable(blok)}>
+<section class="min-w-screen flex min-h-screen w-full flex-col" id={blok.tag} {...storyblokEditable(blok)}>
     <div class="flex grow flex-col items-center justify-center space-y-4 tablet:flex-row tablet:space-x-12">
         <Image src={blok.image.filename} alt={blok.image.alt} width={512} height={512} aspectRatio={1} class="w-56 laptop:w-64 ultrawide:w-96" />
-        <div class="flex flex-col">
+        <div class="flex flex-col text-center tablet:text-left">
             <h1 class="block text-3xl font-bold dark:text-gray-100 tablet:pb-2 tablet:pr-6 tablet:text-4xl laptop:text-5xl ultrawide:text-6xl">{blok.title}</h1>
-            <h2 class="block max-w-fit text-2xl font-medium dark:text-gray-100 tablet:text-3xl laptop:text-4xl ultrawide:text-5xl">
-                <Fragment set:html={renderRichText(blok.description)} />
-            </h2>
+            <h2 class="block max-w-fit text-2xl font-medium dark:text-gray-100 tablet:text-3xl laptop:text-4xl ultrawide:text-5xl" set:html={renderRichText(blok.description)} />
         </div>
     </div>
     <div class="item-center flex w-full justify-center pb-16 dark:text-gray-100">
         <a class="flex flex-col items-center justify-center space-y-4 transition-colors duration-300 hover:text-primary" href={blok.call_to_action.url}>
             <span class="text-lg font-medium">En savoir plus</span>
-            <Icon class="h-8 w-8 animate-bounce" pack="ph" name="arrow-down" />
+            <Icon class="h-8 w-8 animate-bounce-slow" pack="ph" name="arrow-down" />
         </a>
     </div>
 </section>
