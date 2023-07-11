@@ -5,21 +5,30 @@ import { Icon } from "astro-icon";
 const { blok } = Astro.props;
 ---
 
-<article class="flex flex-col items-start justify-start rounded-lg border border-gray-100 shadow-lg transition hover:translate-y-1 hover:shadow-md dark:border-gray-800 dark:bg-gray-800 dark:shadow-gray-900" {...storyblokEditable(blok)} id={blok.title}>
+<div class="flex flex-col items-start justify-start rounded-lg border border-gray-100 bg-white shadow-lg transition hover:translate-y-1 hover:shadow-md dark:border-gray-800 dark:bg-gray-800 dark:shadow-gray-900" {...storyblokEditable(blok)} id={blok.title}>
     <a href={blok.website.url} aria-label="alt" rel="external">
-        <Image src={blok.image.filename} alt="" width={1080} aspectRatio={16 / 9} class="rounded-t-lg bg-white dark:bg-gray-100" />
+        <Image src={blok.image.filename} alt="" width={1080} aspectRatio={16 / 9} class:list={[blok.website.url === "" ? "cursor-default" : "cursor-pointer", "dark:brightness-90 rounded-t-lg bg-white dark:bg-gray-100 "]} />
     </a>
     <div class="flex h-full w-full flex-col px-4 py-4">
-        <h4 class="pb-1 text-lg font-bold text-gray-900 dark:text-gray-100">{blok.title}</h4>
+        <div class="flex items-center justify-between pb-1">
+            <h4 class="grow text-xl font-bold text-gray-900 dark:text-gray-100">{blok.title}</h4>
+            {
+                blok.show_details && (
+                    <h5 class="text-md text-right font-semibold text-gray-700 dark:text-gray-200">
+                        {blok.type} • {blok.year}
+                    </h5>
+                )
+            }
+        </div>
         <span class="grow pb-2 text-justify text-sm font-medium text-gray-500 dark:text-gray-300">{blok.description}</span>
         <div class="mr-4 flex justify-between space-x-4 py-2">
             <div class="flex touch-pan-x snap-x flex-nowrap gap-2 overflow-x-auto scrollbar-none">
                 {blok.languages.map((language) => <span class="shrink-0 snap-mandatory snap-start rounded-full bg-gray-100 px-3 py-1 text-gray-500 dark:bg-gray-700 dark:text-gray-200">{language} </span>)}
             </div>
             <div class="flex">
-                <a href={blok.git.url} aria-label={` ${blok.title} source`} rel="external" target="_blank"><Icon class="h-7 w-7 dark:text-gray-50" pack="simple-icons" name="github" /></a>
-                <a href={blok.website} aria-label={` ${blok.title} website`} rel="external" target="_blank" aria-hidden="true" class="hidden"><Icon class="h-6 w-6" pack="ph" name="arrow-square-out-light" /></a>
+                <a href={blok.git.url} aria-label={` ${blok.title} source`} rel="external" target="_blank" aria-hidden={blok.git.url === ""} class={blok.git.url === "" && "sr-only"}><Icon class="h-7 w-7 dark:text-gray-50" pack="simple-icons" name="github" /></a>
+                <a href={blok.website} aria-label={` ${blok.title} website`} rel="external" target="_blank" aria-hidden="true" class="sr-only"><Icon class="h-6 w-6" pack="ph" name="arrow-square-out-light" /></a>
             </div>
         </div>
     </div>
-</article>
+</div>

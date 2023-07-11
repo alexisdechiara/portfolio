@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import storyblok from "@storyblok/astro";
+import VitePluginBrowserSync from "vite-plugin-browser-sync";
 import { loadEnv } from "vite";
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
@@ -50,7 +51,13 @@ export default defineConfig({
 		},
     }), partytown(), sitemap(), compress()],
 	vite: {
-		plugins: [basicSsl()],
+		plugins: [basicSsl(),VitePluginBrowserSync({
+			bs: {
+				ui: {
+				port: 3000
+				},
+			}
+			})],
 		server: {
 			https: true,
 		},

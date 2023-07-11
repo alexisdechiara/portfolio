@@ -9,3 +9,10 @@
     --color-primary-dark: theme(colors.gray.600);
   }
 }
+
+@layer utilities {
+    .scrollbar::-webkit-scrollbar-thumb {
+        border: 4px solid transparent;
+        background-clip: padding-box;
+    }
+}
