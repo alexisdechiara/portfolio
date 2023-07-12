@@ -48,6 +48,10 @@ export default defineConfig({
 			item: "storyblok/Item",
 			projectsContainer: "storyblok/ProjectsContainer",
 			project: "storyblok/Project",
+			backNavigation: "storyblok/BackNavigation",
+			simplePage: "storyblok/SimplePage",
+			legalNotice: "storyblok/LegalNotice",
+			licenses: "storyblok/Licenses",
 		},
     }), partytown(), sitemap(), compress()],
 	vite: {

@@ -1,0 +1,42 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import { LicensesReport } from "astro-licenses-report";
+const { blok } = Astro.props;
+---
+
+<div class="prose mb-16 w-full overflow-auto" {...storyblokEditable(blok)}>
+    <LicensesReport nameText={blok.name} authorText={blok.author} licenseText={blok.license} linkText={blok.link} />
+</div>
+
+<style>
+    .table {
+        @apply w-full table-auto overflow-hidden rounded-lg border border-gray-200 font-medium;
+    }
+    .thead {
+        @apply table-header-group bg-gray-700 text-center font-bold uppercase leading-[3] text-white dark:text-gray-100;
+    }
+    .tr {
+        @apply table-row py-2;
+    }
+    .tr:not(:first-of-type) {
+        @apply border-b-2 border-gray-200;
+    }
+    .tr:nth-of-type(2n + 2) {
+        @apply bg-gray-200 dark:bg-gray-600;
+    }
+    .th {
+        @apply table-cell;
+    }
+    .td {
+        @apply table-cell px-2 leading-loose;
+    }
+    .td:nth-of-type(2) {
+        @apply text-center;
+    }
+    .td:nth-of-type(3) {
+        @apply text-center;
+    }
+    .tbody {
+        @apply table-row-group;
+    }
+</style>

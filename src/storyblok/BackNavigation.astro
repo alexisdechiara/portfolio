@@ -1,0 +1,12 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import { Icon } from "astro-icon";
+const { blok } = Astro.props;
+---
+
+<nav class="m-8 flex items-center space-x-2" {...storyblokEditable(blok)}>
+    <a href="/" class="inline-flex text-xl font-bold text-gray-900 hover:text-primary dark:text-gray-100 tablet:text-2xl">
+        <Icon class="mr-2 h-8 w-8" pack={`${blok.icon[0]?.pack || "ph"}`} name={`${blok.icon[0]?.name || "caret-left-bold"}`} />
+        {blok.text}
+    </a>
+</nav>
