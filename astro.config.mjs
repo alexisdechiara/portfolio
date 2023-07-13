@@ -52,6 +52,7 @@ export default defineConfig({
 			simplePage: "storyblok/SimplePage",
 			legalNotice: "storyblok/LegalNotice",
 			licenses: "storyblok/Licenses",
+			callToAction: "storyblok/CallToAction",
 		},
     }), partytown(), sitemap(), compress()],
 	vite: {

@@ -2,16 +2,8 @@
 const { blok } = Astro.props;
 ---
 
-{
-    blok.isButton ? (
-        <li id="contact-link" class="rounded-full border-2 border-primary px-3 py-1 capitalize text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-white dark:hover:text-gray-100">
-            <a href={blok.link.url} rel="tag">
-                {blok.text}
-            </a>
-        </li>
-    ) : (
-        <li class="capitalize transition duration-300 ease-in-out hover:text-primary dark:hover:text-gray-100">
-            <a href={blok.link.url}>{blok.text}</a>
-        </li>
-    )
-}
+<li class:list={[blok.isButton ? "rounded-full border-2 border-primary px-3 py-1 capitalize text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-white dark:hover:text-gray-100" : "relative capitalize transition duration-300 ease-in-out hover:text-primary dark:hover:text-gray-100"]}>
+    <a href={blok.link.url} rel="tag">
+        {blok.text}
+    </a>
+</li>

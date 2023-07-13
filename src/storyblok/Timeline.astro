@@ -4,7 +4,7 @@ import { storyblokEditable } from "@storyblok/astro";
 const { blok } = Astro.props;
 ---
 
-<div class="mb-24 flex flex-col items-center justify-center">
+<div class="mb-24 flex w-full flex-col items-center justify-center">
 	<div class="relative flex w-full flex-col space-y-16 pr-4 tablet:px-24">
 		<span class="absolute mb-16 h-full w-2 -translate-x-1 bg-primary-dark dark:bg-primary tablet:left-1/2"></span>
 		<Fragment {...storyblokEditable(blok)}>
