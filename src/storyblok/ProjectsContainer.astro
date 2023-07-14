@@ -39,7 +39,7 @@ const { blok } = Astro.props;
     </section>
 </div>
 
-<script type="text/partytown" define:vars={{ blok }}>
+<script define:vars={{ blok }}>
 let projects = blok.projects;
 const input = document.getElementById("searchInput");
 input.addEventListener("input", searchProject);

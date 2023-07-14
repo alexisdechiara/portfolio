@@ -8,15 +8,16 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 import storyblok from "@storyblok/astro";
 import VitePluginBrowserSync from "vite-plugin-browser-sync";
 import { loadEnv } from "vite";
-import vercel from "@astrojs/vercel/serverless";
+import netlify from '@astrojs/netlify/functions';
+
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
 
 // https://astro.build/config
 export default defineConfig({
-	output: "server",
-	adapter: vercel(),
-	site: env.SITE_URL,
+	output: 'server',
+	adapter: netlify(),
+	site: "https://alexisdechiara.geekly.blog",
 	integrations: [tailwind({
 		applyBaseStyles: false
 	}), image({
@@ -39,7 +40,7 @@ export default defineConfig({
 			margin: "storyblok/Margin",
 			form: "storyblok/Form",
 			iconsContainer: "storyblok/IconsContainer",
-			socialIcon: "storyblok/socialIcon",
+			socialIcon: "storyblok/SocialIcon",
 			wave: "storyblok/Wave",
 			simpleFooter: "storyblok/SimpleFooter",
 			servicesContainer: "storyblok/ServicesContainer",
