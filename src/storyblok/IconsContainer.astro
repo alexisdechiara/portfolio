@@ -4,10 +4,10 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const { blok } = Astro.props;
 ---
 
-<article class="flex w-full items-center justify-evenly pb-48 pt-24 text-white tablet:w-3/4 tablet:pb-32 laptop:w-1/2" {...storyblokEditable(blok)}>
+<div class="flex w-full items-center justify-evenly pb-32 pt-16 text-white tablet:w-3/4 laptop:w-1/2 laptop:pb-8" {...storyblokEditable(blok)}>
 	{
 		blok.icons?.map((blok) => {
 			return <StoryblokComponent blok={blok} />;
 		})
 	}
-</article>
+</div>

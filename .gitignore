@@ -15,11 +15,12 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.dev
 
 # macOS-specific files
 .DS_Store
 
-# Local Netlify folder
+# Local adapter folder
 .netlify
 
 .vercel

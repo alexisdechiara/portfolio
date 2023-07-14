@@ -4,7 +4,7 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const { blok } = Astro.props;
 ---
 
-<section class="min-w-full overflow-x-hidden">
+<div class="min-w-full overflow-x-hidden">
     <div class="mb-8 flex h-16 items-center justify-between">
         {
             blok.header?.map((blok) => {
@@ -30,14 +30,14 @@ const { blok } = Astro.props;
             </div>
         </div>
     </div>
-    <article class="grid w-full grid-cols-1 gap-8 tablet:grid-cols-2 laptop:grid-cols-3 ultrawide:grid-cols-5" {...storyblokEditable(blok)}>
+    <section class="grid w-full grid-cols-1 gap-8 pb-8 tablet:grid-cols-2 laptop:grid-cols-3 ultrawide:grid-cols-5" {...storyblokEditable(blok)}>
         {
             blok.projects?.map((content) => {
                 return <StoryblokComponent blok={content} />;
             })
         }
-    </article>
-</section>
+    </section>
+</div>
 
 <script define:vars={{ blok }}>
 let projects = blok.projects;

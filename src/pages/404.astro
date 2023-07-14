@@ -4,12 +4,12 @@ import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
 const storyblokApi = useStoryblokApi();
-const { data } = await storyblokApi.get("cdn/stories/mentions-legales", {
-	version: import.meta.env.DEV ? "draft" : "published",
+const { data } = await storyblokApi.get("cdn/stories/error", {
+    version: import.meta.env.DEV ? "draft" : "published",
 });
 const story = data.story;
 ---
 
 <Layout>
-	<StoryblokComponent blok={story.content} />
+    <StoryblokComponent blok={story.content} />
 </Layout>

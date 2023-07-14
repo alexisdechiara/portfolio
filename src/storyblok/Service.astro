@@ -1,9 +1,10 @@
 ---
+import { storyblokEditable } from "@storyblok/astro";
 import { Image } from "@astrojs/image/components";
 const { blok } = Astro.props;
 ---
 
-<div class="group flex aspect-square h-full min-h-max w-64 flex-col items-center space-y-2 rounded-xl bg-gray-100 p-4 transition-colors hover:bg-primary hover:text-white dark:bg-gray-800 dark:text-gray-100 hover:dark:text-gray-100">
+<div class="group flex aspect-square h-full min-h-max w-64 flex-col items-center space-y-2 rounded-xl bg-gray-100 p-4 transition-colors hover:bg-primary hover:text-white dark:bg-gray-800 dark:text-gray-100 hover:dark:text-gray-100" {...storyblokEditable(blok)}>
     <Image src={blok.image.filename} alt="Profile picture" width={128} height={128} aspectRatio={1} format="svg" class="mb-4 fill-primary text-primary transition group-hover:invert dark:invert" />
     <span class="text-center text-lg font-bold">{blok.title}</span>
     <span class="text-center text-xs">{blok.description}</span>

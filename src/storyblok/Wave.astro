@@ -1,6 +1,7 @@
 ---
+import { storyblokEditable } from "@storyblok/astro";
 import { Icon } from "astro-icon";
 const { blok } = Astro.props;
 ---
 
-<Icon class={blok.color} name="wave" />
+<Icon class={blok.color} name="wave" {...storyblokEditable(blok)} />

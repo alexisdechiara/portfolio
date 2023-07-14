@@ -1,8 +1,9 @@
 ---
+import { storyblokEditable } from "@storyblok/astro";
 const { blok } = Astro.props;
 ---
 
-<li class:list={[blok.isButton ? "rounded-full border-2 border-primary px-3 py-1 capitalize text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-white dark:hover:text-gray-100" : "relative capitalize transition duration-300 ease-in-out hover:text-primary dark:hover:text-gray-100"]}>
+<li class:list={[blok.isButton ? "rounded-full border-2 border-primary px-3 py-1 capitalize text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-white dark:hover:text-gray-100" : "relative capitalize transition duration-300 ease-in-out hover:text-primary dark:hover:text-gray-100"]} {...storyblokEditable(blok)}>
     <a href={blok.link.url} rel="tag">
         {blok.text}
     </a>

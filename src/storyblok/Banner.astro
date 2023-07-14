@@ -12,11 +12,11 @@ const { blok } = Astro.props;
 			<Fragment set:html={renderRichText(blok.description)} />
 		</span>
 	</div>
-	<article class="relative flex h-fit w-full flex-col items-center justify-start">
+	<div class="relative flex h-fit w-full flex-col items-center justify-start">
 		{
 			blok.content?.map((blok) => {
 				return <StoryblokComponent blok={blok} />;
 			})
 		}
-	</article>
+	</div>
 </section>

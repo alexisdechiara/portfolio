@@ -1,5 +1,6 @@
 ---
+import { storyblokEditable } from "@storyblok/astro";
 const { blok } = Astro.props;
 ---
 
-<span class="text-md mb-2 text-center">{blok.value}</span>
+<span class="text-md mb-2 text-center" {...storyblokEditable(blok)}>{blok.value}</span>

@@ -22,9 +22,7 @@ module.exports = {
 		},
 	},
 	safelist: [
-		{
-			pattern: /bg-(sky|indigo|purple|red|pink|orange|green)-(500|600)/,
-		},
+		{ pattern: /bg-(sky|indigo|purple|red|pink|orange|green)-(500|600)/ },
 		{ pattern: /^\-?m(\w?)-/ },
     	{ pattern: /^p(\w?)-/ },
 	],

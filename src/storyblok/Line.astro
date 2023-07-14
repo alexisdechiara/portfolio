@@ -1,8 +1,9 @@
 ---
+import { storyblokEditable } from "@storyblok/astro";
 const { blok } = Astro.props;
 ---
 
-<div class:list={[blok.position === "left" ? "tablet:justify-start" : "tablet:justify-end", "flex h-[300px] items-center justify-between"]}>
+<div class:list={[blok.position === "left" ? "tablet:justify-start" : "tablet:justify-end", "flex h-[300px] items-center justify-between"]} {...storyblokEditable(blok)}>
 	<span class="-translate-x-4 rounded-full border-[16px] border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary tablet:hidden"></span>
 	<span class:list={[blok.position === "left" && "tablet:hidden", "text-2xl tablet:text-4xl font-bold text-primary-dark dark:text-primary"]}>{blok.year}</span>
 	{blok.position === "right" && <span class="mr-8 hidden translate-x-12 rounded-full border-[16px] border-primary-dark bg-primary-dark dark:border-primary dark:bg-primary tablet:flex" />}

@@ -4,13 +4,11 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const { blok } = Astro.props;
 ---
 
-<div class="mb-8 flex flex-col items-center justify-center">
+<div class="mb-8 flex flex-col items-center justify-center" {...storyblokEditable(blok)}>
 	<h3 class="pb-2 text-center text-xl font-medium text-primary-dark dark:text-primary-light">{blok.title}</h3>
-	<Fragment {...storyblokEditable(blok)}>
-		{
-			blok.content?.map((blok) => {
-				return <StoryblokComponent blok={blok} />;
-			})
-		}
-	</Fragment>
+	{
+		blok.content?.map((blok) => {
+			return <StoryblokComponent blok={blok} />;
+		})
+	}
 </div>

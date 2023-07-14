@@ -1,10 +1,11 @@
 ---
+import { storyblokEditable } from "@storyblok/astro";
 import { renderRichText } from "@storyblok/astro";
 const { blok } = Astro.props;
 ---
 
-<div class="absolute inset-x-8 bottom-4 mt-4 flex flex-col items-center justify-between space-y-2 text-center text-white tablet:flex-row tablet:space-y-0">
-	<span>{blok.left}</span>
+<div class="absolute inset-x-8 bottom-4 mt-4 flex flex-col items-center justify-between space-y-2 text-center text-white tablet:flex-row tablet:space-y-0" {...storyblokEditable(blok)}>
+	<Fragment set:html={renderRichText(blok.left)} />
 	<Fragment set:html={renderRichText(blok.center)} />
-	<span class="capitalize">{blok.right}</span>
+	<Fragment set:html={renderRichText(blok.right)} />
 </div>

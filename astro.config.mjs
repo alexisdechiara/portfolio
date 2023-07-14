@@ -8,23 +8,23 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 import storyblok from "@storyblok/astro";
 import VitePluginBrowserSync from "vite-plugin-browser-sync";
 import { loadEnv } from "vite";
-
+import vercel from "@astrojs/vercel/serverless";
 const env = loadEnv("", process.cwd(), "STORYBLOK");
+
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://alexisdechiara.geekly.blog",
+	output: "hybrid",
+	adapter: vercel(),
+	site: env.SITE_URL,
 	integrations: [tailwind({
 		applyBaseStyles: false
 	}), image({
-		serviceEntryPoint: "@astrojs/image/sharp"
-	}),
-	storyblok({
-    	accessToken: env.STORYBLOK_TOKEN,
+	serviceEntryPoint: "@astrojs/image/sharp"
+	}), storyblok({
+		accessToken: env.STORYBLOK_TOKEN,
 		components: {
 			page: "storyblok/Page",
-			header: "storyblok/Header",
-			main: "storyblok/Main",
 			navigation: "storyblok/Navigation",
 			hero: "storyblok/Hero",
 			banner: "storyblok/Banner",
@@ -37,7 +37,6 @@ export default defineConfig({
 			line: "storyblok/Line",
 			feature: "storyblok/Feature",
 			margin: "storyblok/Margin",
-			contact: "storyblok/Contact",
 			form: "storyblok/Form",
 			iconsContainer: "storyblok/IconsContainer",
 			socialIcon: "storyblok/socialIcon",
@@ -53,18 +52,19 @@ export default defineConfig({
 			legalNotice: "storyblok/LegalNotice",
 			licenses: "storyblok/Licenses",
 			callToAction: "storyblok/CallToAction",
-		},
-    }), partytown(), sitemap(), compress()],
+			error: "storyblok/Error"
+		}
+	}), partytown(), sitemap(), compress()],
 	vite: {
-		plugins: [basicSsl(),VitePluginBrowserSync({
+		plugins: [basicSsl(), VitePluginBrowserSync({
 			bs: {
-				ui: {
+			ui: {
 				port: 3000
-				},
 			}
-			})],
+			}
+		})],
 		server: {
-			https: true,
-		},
-	},
+			https: true
+		}
+	}
 });

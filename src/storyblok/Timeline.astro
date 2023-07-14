@@ -4,16 +4,14 @@ import { storyblokEditable } from "@storyblok/astro";
 const { blok } = Astro.props;
 ---
 
-<div class="mb-24 flex w-full flex-col items-center justify-center">
+<div class="mb-24 flex w-full flex-col items-center justify-center" {...storyblokEditable(blok)}>
 	<div class="relative flex w-full flex-col space-y-16 pr-4 tablet:px-24">
 		<span class="absolute mb-16 h-full w-2 -translate-x-1 bg-primary-dark dark:bg-primary tablet:left-1/2"></span>
-		<Fragment {...storyblokEditable(blok)}>
-			{
-				blok.lines?.map((blok) => {
-					return <StoryblokComponent blok={blok} />;
-				})
-			}
-		</Fragment>
+		{
+			blok.lines?.map((blok) => {
+				return <StoryblokComponent blok={blok} />;
+			})
+		}
 	</div>
 	<div class="relative h-32 w-full">
 		<span class="absolute -mt-1 h-full -translate-x-1 border-r-8 border-dashed border-primary-dark dark:border-primary tablet:left-1/2"></span>
