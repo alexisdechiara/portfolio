@@ -26,5 +26,5 @@ module.exports = {
 		{ pattern: /^\-?m(\w?)-/ },
     	{ pattern: /^p(\w?)-/ },
 	],
-	plugins: [require("prettier-plugin-tailwindcss"), require("tailwind-scrollbar")({ nocompatible: true })],
+	plugins: [require("prettier-plugin-tailwindcss"), require('@tailwindcss/typography'), require("tailwind-scrollbar")({ nocompatible: true })],
 };

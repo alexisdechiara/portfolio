@@ -14,7 +14,7 @@ const env = loadEnv("", process.cwd(), "STORYBLOK");
 
 // https://astro.build/config
 export default defineConfig({
-	output: "hybrid",
+	output: "server",
 	adapter: vercel(),
 	site: env.SITE_URL,
 	integrations: [tailwind({

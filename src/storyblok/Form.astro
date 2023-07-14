@@ -22,3 +22,16 @@ const { blok } = Astro.props;
 		<button type="submit" class="inline w-full rounded-xl border-2 border-primary-light px-3 py-1 uppercase text-primary-light transition duration-150 ease-in-out hover:bg-primary-light hover:text-slate-900 tablet:w-fit">{blok.submit}</button>
 	</div>
 </form>
+
+<script type="text/partytown" define:vars={blok}>
+function configureAhoy() {
+	ahoy.configure({
+		visitsUrl: "https://usebasin.com/ahoy/visits",
+		eventsUrl: "https://usebasin.com/ahoy/events",
+		page: blok.basin_id /* Form id here */,
+	});
+	ahoy.trackView();
+	ahoy.trackSubmits();
+}
+</script>
+<script type="text/partytown" is:inline src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.9/dist/ahoy.min.js" async defer onload="configureAhoy()"></script>
