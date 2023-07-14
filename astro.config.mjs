@@ -18,7 +18,7 @@ export default defineConfig({
 	adapter: vercel({
 		analytics: true,
 	}),
-	site: "https://alexisdechiara.geekly.blog",
+	site: "https://alexisdechiara.fr",
 	integrations: [tailwind({
 		applyBaseStyles: false
 	}), image({
