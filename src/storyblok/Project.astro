@@ -1,7 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import { storyblokEditable } from "@storyblok/astro";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-iconify";
 const { blok } = Astro.props;
 ---
 
@@ -11,12 +11,12 @@ const { blok } = Astro.props;
     </a>
     <div class="flex h-full w-full flex-col px-4 py-4">
         <div class="flex items-center justify-between pb-1">
-            <h4 class="grow text-xl font-bold text-gray-900 dark:text-gray-100">{blok.title}</h4>
+            <h3 class="grow text-xl font-bold text-gray-900 dark:text-gray-100">{blok.title}</h3>
             {
                 blok.show_details && (
-                    <h5 class="text-md text-right font-semibold text-gray-700 dark:text-gray-200">
+                    <span class="text-md text-right font-semibold text-gray-700 dark:text-gray-200">
                         {blok.type} • {blok.year}
-                    </h5>
+                    </span>
                 )
             }
         </div>

@@ -8,15 +8,16 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 import storyblok from "@storyblok/astro";
 import VitePluginBrowserSync from "vite-plugin-browser-sync";
 import { loadEnv } from "vite";
-import netlify from '@astrojs/netlify/functions';
-
+import vercel from '@astrojs/vercel/static';
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
 
 // https://astro.build/config
 export default defineConfig({
-	output: 'server',
-	adapter: netlify(),
+	output: "static",
+	adapter: vercel({
+		analytics: true,
+	}),
 	site: "https://alexisdechiara.geekly.blog",
 	integrations: [tailwind({
 		applyBaseStyles: false

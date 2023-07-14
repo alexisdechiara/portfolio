@@ -4,17 +4,17 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const { blok } = Astro.props;
 ---
 
-<section class="flex flex-col gap-y-8 px-4 md:px-16" {...storyblokEditable(blok)}>
+<section class="flex flex-col gap-y-8 px-4 dark:text-gray-100 md:px-16" {...storyblokEditable(blok)}>
     <h1 class="py-4 text-center text-4xl font-bold">{blok.title}</h1>
     {
         blok.parts?.map((part) => (
-            <article>
+            <div>
                 <h2 class="pb-4 text-2xl font-bold">{part.subtitle}</h2>
-                <p set:html={renderRichText(part.paragraph)} />
+                {part.paragraph && <p set:html={renderRichText(part.paragraph)} />}
                 {part.content?.map((content) => {
                     return <StoryblokComponent blok={content} />;
                 })}
-            </article>
+            </div>
         ))
     }
 </section>

@@ -22,6 +22,9 @@ module.exports = {
 		},
 	},
 	safelist: [
+		"underline",
+		"fill-slate-900",
+		"bg-slate-900",
 		{ pattern: /bg-(sky|indigo|purple|red|pink|orange|green)-(500|600)/ },
 		{ pattern: /^\-?m(\w?)-/ },
     	{ pattern: /^p(\w?)-/ },

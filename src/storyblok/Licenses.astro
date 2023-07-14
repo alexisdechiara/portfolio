@@ -1,10 +1,9 @@
 ---
-import { storyblokEditable } from "@storyblok/astro";
 import { LicensesReport } from "astro-licenses-report";
 const { blok } = Astro.props;
 ---
 
-<div class="prose mb-16 w-full overflow-auto" {...storyblokEditable(blok)}>
+<div class="mb-16 w-full overflow-auto">
     <LicensesReport nameText={blok.name} authorText={blok.author} licenseText={blok.license} linkText={blok.link} />
 </div>
 
