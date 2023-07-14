@@ -1,48 +1,71 @@
-# Welcome to [Astro](https://astro.build)
+# Portfolio de Alexis De Chiara
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+## Présentation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Ce repository contient mon portfolio personnel, qui met en valeur mes compétences, mes projets et mes réalisations. Il est conçu pour offrir aux visiteurs une vision complète de mon parcours professionnel, mes réalisations et mes compétences techniques.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+![Image de la page d'accueil](src/assets/images/homepage.png)
 
-## 🚀 Project Structure
+## Fonctionnalités
 
-Inside of your Astro project, you'll see the following folders and files:
+✅ Utilisation de **Tailwind CSS** (@astrojs/tailwind) avec le support du mode sombre
+✅ Optimisation du **SEO** (astro-seo)
+✅ Génération de la **sitemap automatique** (@astrojs/sitemap)
+✅ Utilisation de **Storyblok** (@storyblok/astro)
+✅ Déployable directement sur **vercel** (@astrojs/vercel)
+✅ Utilisation de **Prettier** (prettier-plugin-astro ) et **Eslint** (eslint-plugin-astro)
+✅ Optimisation des scripts externe avec partytown (@astrojs/partytown)
+✅ Utilisation des icônes simplifiées (astro-iconify)
+✅ Génération automatique des licenses (astro-licenses-report)
+
+## Structure du projet
 
 ```
 /
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── assets/
+│   │   └── styles/
+│   │       └── base.css
+│   │
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── Script.astro
+│   │
+│   ├── icons/
+│   │   └── wave.astro
+│   │
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   │
+│   ├── pages/
+│   │   ├── 404.astro
+│   │   ├── index.astro
+│   │   ├── mentions-legales.astro
+│   │   └── projets.astro
+│   │
+│   └── storyblok/
+│       └── ...
+│
+├── .eslintrc.json
+├── .prettierrc
+├── astro.config.mjs
+├── package.json
+├── prettier.config.js
+├── tailwind.config.js
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Variables d'environnements
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+ Nom | Fonction |
+---|---|
+ STORYBLOK_TOKEN | Permet de se connecter à la base de données de storyblok |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Pour en savoir plus
 
-## 🧞 Commands
+N'hésitez pas à consulter la [documentation officiel de astro](https://docs.astro.build) et le [guide d'utilisation de Storyblok](https://www.storyblok.com/tc/astro)
 
-All commands are run from the root of the project, from a terminal:
+## License
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Mon portfolio est sous licence MIT - voir le fichier [LICENSE](./LICENSE.md) pour plus de détails.

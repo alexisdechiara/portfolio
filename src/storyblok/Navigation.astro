@@ -6,7 +6,7 @@ let palette = ["sky", "indigo", "purple", "orange", "red", "pink", "green"];
 const { blok } = Astro.props;
 ---
 
-<nav class:list={[blok.hidden && "hidden", "fixed origin-top duration-500 delay-100 transition-all ease-in-out inset-x-0 top-0 z-40 flex flex-row-reverse justify-between bg-white/95 backdrop-blur-lg px-8 py-4 dark:bg-gray-900/95 tablet:items-center tablet:justify-between"]} id="navbar" {...storyblokEditable(blok)}>
+<nav class:list={[blok.hidden && "hidden", "fixed origin-top duration-500 delay-100 transition-transform ease-in-out inset-x-0 top-0 z-40 flex flex-row-reverse justify-between bg-white/95 backdrop-blur-lg px-8 py-4 dark:bg-gray-900/95 tablet:items-center tablet:justify-between"]} id="navbar" {...storyblokEditable(blok)}>
 	<div class="tablet:hidden" id="mobile-nav">
 		<Icon class="h-6 w-6 cursor-pointer tablet:hidden" pack="ph" name="list-bold" id="burger-icon" />
 		<Icon class="hidden h-6 w-6 cursor-pointer" pack="ph" name="x-bold" id="close-icon" />

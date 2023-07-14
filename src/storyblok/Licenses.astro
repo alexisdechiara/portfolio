@@ -3,7 +3,7 @@ import { LicensesReport } from "astro-licenses-report";
 const { blok } = Astro.props;
 ---
 
-<div class="mb-16 w-full overflow-auto">
+<div class="mb-16 w-min overflow-auto">
     <LicensesReport nameText={blok.name} authorText={blok.author} licenseText={blok.license} linkText={blok.link} />
 </div>
 
