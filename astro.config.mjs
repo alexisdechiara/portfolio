@@ -7,6 +7,7 @@ import compress from "astro-compress";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import storyblok from "@storyblok/astro";
 import VitePluginBrowserSync from "vite-plugin-browser-sync";
+import robotsTxt from "astro-robots-txt";
 import { loadEnv } from "vite";
 import vercel from '@astrojs/vercel/static';
 const env = loadEnv("", process.cwd(), "STORYBLOK");
@@ -56,7 +57,7 @@ export default defineConfig({
 			callToAction: "storyblok/CallToAction",
 			error: "storyblok/Error"
 		}
-	}), partytown(), sitemap(), compress()],
+	}), partytown(), sitemap(), compress(), robotsTxt()],
 	vite: {
 		plugins: [basicSsl(), VitePluginBrowserSync({
 			bs: {
