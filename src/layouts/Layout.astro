@@ -2,52 +2,53 @@
 import Script from "../components/Script.astro";
 import { SEO } from "astro-seo";
 import "../assets/styles/base.css";
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="fr" class="scrollbar-track--transparent overflow-x-hidden scroll-smooth scrollbar scrollbar-thumb-gray-400 scrollbar-thumb-rounded-full scrollbar-w-4 hover:scrollbar-thumb-gray-500">
-  <head>
-    <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+	<head>
+		<link rel="icon" href="/favicon/favicon.ico" sizes="any" />
 
-    <SEO
-      charset="UTF-8"
-      title="Alexis De Chiara - Portfolio"
-      description="Site portfolio de Alexis De Chiara (Développeur Front-end & UX/UI designer) comprenant l'ensembles des diplomes, projets et moyens de me contacter."
-      canonical="https://alexisdechiara.fr"
-      extend={{
-        // extending the default link tags
-        link: [
-          { rel: "apple-touch-icon", href: "/favicon/apple-touch-icon.png" },
-          { rel: "manifest", href: "/site.webmanifest" },
-          { rel: "preconnect", href: "https://fonts.googleapis.com" },
-          { rel: "preconnect", href: "https://fonts.gstatic.com" },
-          { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" },
-        ],
-        // extending the default meta tags
-        meta: [
-          { name: "viewport", content: "width=device-width" },
-          { name: "keywords", content: "portfolio, Astro, tailwind, Alexis De Chiara" },
-          { name: "author", content: "Alexis De Chiara" },
-          { name: "generator", content: Astro.generator },
-        ],
-      }}
-    />
+		<SEO
+			charset="UTF-8"
+			title={title}
+			description="Site portfolio de Alexis De Chiara (Développeur Front-end & UX/UI designer) comprenant l'ensembles des diplomes, projets et moyens de me contacter."
+			canonical="https://alexisdechiara.fr"
+			extend={{
+				// extending the default link tags
+				link: [
+					{ rel: "apple-touch-icon", href: "/favicon/apple-touch-icon.png" },
+					{ rel: "manifest", href: "/site.webmanifest" },
+					{ rel: "preconnect", href: "https://fonts.googleapis.com" },
+					{ rel: "preconnect", href: "https://fonts.gstatic.com" },
+					{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" },
+				],
+				// extending the default meta tags
+				meta: [
+					{ name: "viewport", content: "width=device-width" },
+					{ name: "keywords", content: "portfolio, Astro, tailwind, Alexis De Chiara" },
+					{ name: "author", content: "Alexis De Chiara" },
+					{ name: "generator", content: Astro.generator },
+				],
+			}}
+		/>
 
-    <meta property="og:url" content="https://alexisdechiara.fr" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alexis De Chiara - Portfolio" />
-    <meta property="og:description" content="Développeur Front-end & UX/UI designer" />
-    <meta property="og:image" content="/portfolio.webp" />
+		<meta property="og:url" content="https://alexisdechiara.fr" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Alexis De Chiara - Portfolio" />
+		<meta property="og:description" content="Développeur Front-end & UX/UI designer" />
+		<meta property="og:image" content="/homepage.webp" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="alexisdechiara.fr" />
-    <meta property="twitter:url" content="https://alexisdechiara.fr" />
-    <meta name="twitter:title" content="Alexis De Chiara - Portfolio" />
-    <meta name="twitter:description" content="Développeur Front-end & UX/UI designer" />
-    <meta name="twitter:image" content="/portfolio.webp" />
-  </head>
-  <body class="overflow-x-hidden bg-white dark:bg-gray-900">
-    <Script />
-    <slot />
-  </body>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="alexisdechiara.fr" />
+		<meta property="twitter:url" content="https://alexisdechiara.fr" />
+		<meta name="twitter:title" content="Alexis De Chiara - Portfolio" />
+		<meta name="twitter:description" content="Développeur Front-end & UX/UI designer" />
+		<meta name="twitter:image" content="/homepage.webp" />
+	</head>
+	<body class="overflow-x-hidden bg-white dark:bg-gray-900">
+		<Script />
+		<slot />
+	</body>
 </html>

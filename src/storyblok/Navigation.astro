@@ -73,47 +73,47 @@ const { blok } = Astro.props;
 	</div>
 </div>
 
-<script>
-	const items = document.querySelectorAll("#links-list li") as NodeListOf<HTMLAnchorElement>;
-	const navbar = document.getElementById("navbar") as HTMLElement;
-	const linksList = document.getElementById("links-list") as HTMLElement;
-	const mobileNav = document.getElementById("mobile-nav") as HTMLElement;
-	const burger = document.getElementById("burger-icon") as HTMLElement;
-	const close = document.getElementById("close-icon") as HTMLElement;
-	let lastScrollTop = 0;
-	let isOpen = false;
+<script is:inline>
+const items = document.querySelectorAll("#links-list li");
+const navbar = document.getElementById("navbar");
+const linksList = document.getElementById("links-list");
+const mobileNav = document.getElementById("mobile-nav");
+const burger = document.getElementById("burger-icon");
+const close = document.getElementById("close-icon");
+let lastScrollTop = 0;
+let isOpen = false;
 
-	window.addEventListener("scroll", () => {
-		let scrollTop = window.scrollY > window.innerHeight ? window.scrollY : 0;
-		if (scrollTop > lastScrollTop + 10 && !isOpen) {
-			navbar.classList.add("-translate-y-24");
-		} else if (scrollTop < lastScrollTop && !isOpen) {
-			navbar.classList.remove("-translate-y-24");
-		} else {
-			lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-		}
-		lastScrollTop = scrollTop;
-	});
-
-	mobileNav.addEventListener("click", toggleNavbar);
-	items.forEach((item) => {
-		item.addEventListener("click", toggleNavbar);
-	});
-
-	function toggleNavbar() {
-		if (window.innerWidth < 768) {
-			isOpen = !isOpen;
-			navbar.classList.toggle("h-full");
-			linksList.classList.toggle("hidden");
-			burger.classList.toggle("hidden");
-			close.classList.toggle("hidden");
-			linksList.classList.toggle("flex");
-			linksList.classList.toggle("justify-evenly");
-			items.forEach((item) => {
-				item.classList.toggle("text-3xl");
-				item.classList.toggle("px-6");
-				item.classList.toggle("py-3");
-			});
-		}
+window.addEventListener("scroll", () => {
+	let scrollTop = window.scrollY > window.innerHeight ? window.scrollY : 0;
+	if (scrollTop > lastScrollTop + 10 && !isOpen) {
+		navbar.classList.add("-translate-y-24");
+	} else if (scrollTop < lastScrollTop && !isOpen) {
+		navbar.classList.remove("-translate-y-24");
+	} else {
+		lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 	}
+	lastScrollTop = scrollTop;
+});
+
+mobileNav.addEventListener("click", toggleNavbar);
+items.forEach((item) => {
+	item.addEventListener("click", toggleNavbar);
+});
+
+function toggleNavbar() {
+	if (window.innerWidth < 768) {
+		isOpen = !isOpen;
+		navbar.classList.toggle("h-full");
+		linksList.classList.toggle("hidden");
+		burger.classList.toggle("hidden");
+		close.classList.toggle("hidden");
+		linksList.classList.toggle("flex");
+		linksList.classList.toggle("justify-evenly");
+		items.forEach((item) => {
+			item.classList.toggle("text-3xl");
+			item.classList.toggle("px-6");
+			item.classList.toggle("py-3");
+		});
+	}
+}
 </script>

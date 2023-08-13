@@ -10,6 +10,6 @@ const { data } = await storyblokApi.get("cdn/stories/accueil", {
 const story = data.story;
 ---
 
-<Layout>
+<Layout title="Alexis De Chiara - Portfolio">
 	<StoryblokComponent blok={story.content} />
 </Layout>
