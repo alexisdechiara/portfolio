@@ -10,6 +10,6 @@ const { data } = await storyblokApi.get("cdn/stories/mentions-legales", {
 const story = data.story;
 ---
 
-<Layout>
+<Layout title="Mentions légales">
 	<StoryblokComponent blok={story.content} />
 </Layout>

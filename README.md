@@ -4,7 +4,7 @@
 
 Ce repository contient mon portfolio personnel, qui met en valeur mes compétences, mes projets et mes réalisations. Il est conçu pour offrir aux visiteurs une vision complète de mon parcours professionnel, mes réalisations et mes compétences techniques.
 
-![Image de la page d'accueil](src/assets/images/homepage.png)
+![Image de la page d'accueil](public/homepage.webp)
 
 ## Fonctionnalités
 
